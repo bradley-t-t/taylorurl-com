@@ -3,7 +3,6 @@ import Navbar from '@components/Navbar.jsx'
 import Hero from '@components/Hero.jsx'
 import Offerings from '@components/Offerings.jsx'
 import Process from '@components/Process.jsx'
-import Clients from '@components/Clients.jsx'
 import Footer from '@components/Footer.jsx'
 import ContactModal from '@components/ContactModal.jsx'
 import ParticleBackground from '@components/ParticleBackground.jsx'
@@ -73,7 +72,7 @@ function HomeView() {
                                                                                                          copied={copied}
                                                                                                          copyEmail={copy}
                                                                                                          openContact={openContact}/>
-        <main><Offerings/><Process/><Clients/></main>
+        <main><Offerings/><Process/></main>
         <Footer email={email} copied={copied} copyEmail={copy} onEmailClick={openContact}/>{contactOpen &&
             <ContactModal onClose={closeContact} onSubmit={submitContact} email={email}/>}</div>
 }
