@@ -37,7 +37,7 @@ function HomeView() {
 
     function submitContact(data) {
         const {firstName, lastName, phone, message} = data;
-        const subject = encodeURIComponent('Website Design Inquiry - ' + [firstName, lastName].filter(Boolean).join(' '));
+        const subject = encodeURIComponent('Website Design - ' + [firstName, lastName].filter(Boolean).join(' '));
         const bodyLines = [message || '', '', 'Phone: ' + (phone || 'N/A'), 'Name: ' + [firstName, lastName].filter(Boolean).join(' ')].join('\n');
         const body = encodeURIComponent(bodyLines);
         window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
