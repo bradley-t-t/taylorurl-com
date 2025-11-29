@@ -3,8 +3,7 @@ import './styles/Navbar.css'
 function Navbar({email, activeSection = '', onEmailClick}) {
     const links = [
         {id: 'offerings', label: 'What I Do'},
-        {id: 'process', label: 'How it Works'},
-        {id: 'clients', label: "Who I've Worked With"}
+        {id: 'process', label: 'How it Works'}
     ]
 
     function click(e) {
