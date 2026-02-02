@@ -2,6 +2,13 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [2.2] - 2026-02-01
+
+- Added new Auth view component at src/views/Auth.jsx
+- Added new License view component at src/views/License.jsx
+- Added new Privacy view component at src/views/Privacy.jsx
+- Added new Terms view component at src/views/Terms.jsx
+
 ## [2.1] - 2026-02-01
 
 - Added new configuration file vercel.json for deployment settings

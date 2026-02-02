@@ -4,15 +4,11 @@ import { Menu, X } from 'lucide-react'
 
 export default function Navigation() {
   const location = useLocation()
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', handleScroll)
     setVisible(true)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const links = [
@@ -65,12 +61,18 @@ export default function Navigation() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <button className="text-sm text-gray-400 transition-all duration-300 hover:text-white">
+            <Link
+              to="/auth"
+              className="text-sm text-gray-400 transition-all duration-300 hover:text-white"
+            >
               Sign In
-            </button>
-            <button className="rounded bg-white px-4 py-2 text-sm font-medium text-black transition-all duration-300 hover:scale-105 hover:bg-gray-200">
+            </Link>
+            <Link
+              to="/auth"
+              className="rounded bg-white px-4 py-2 text-sm font-medium text-black transition-all duration-300 hover:scale-105 hover:bg-gray-200"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
 
           <button
@@ -111,12 +113,20 @@ export default function Navigation() {
               </Link>
             ))}
             <div className="mt-4 flex gap-4 border-t border-white/10 pt-4">
-              <button className="text-sm text-gray-400 transition-colors hover:text-white">
+              <Link
+                to="/auth"
+                onClick={() => setMobileOpen(false)}
+                className="text-sm text-gray-400 transition-colors hover:text-white"
+              >
                 Sign In
-              </button>
-              <button className="rounded bg-white px-4 py-2 text-sm font-medium text-black transition-all hover:bg-gray-200">
+              </Link>
+              <Link
+                to="/auth"
+                onClick={() => setMobileOpen(false)}
+                className="rounded bg-white px-4 py-2 text-sm font-medium text-black transition-all hover:bg-gray-200"
+              >
                 Sign Up
-              </button>
+              </Link>
             </div>
           </div>
         </div>

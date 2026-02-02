@@ -8,6 +8,10 @@ import Services from '@views/Services'
 import Work from '@views/Work'
 import Contact from '@views/Contact'
 import Pricing from '@views/Pricing'
+import Privacy from '@views/Privacy'
+import Terms from '@views/Terms'
+import License from '@views/License'
+import Auth from '@views/Auth'
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
             <Route path="work" element={<Work />} />
             <Route path="pricing" element={<Pricing />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="privacy" element={<Privacy />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="license" element={<License />} />
+            <Route path="auth" element={<Auth />} />
           </Route>
         </Routes>
       </AnimatePresence>
