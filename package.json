@@ -10,8 +10,7 @@
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,css}\"",
-    "release": "node scripts/release.js",
-    "cleanup": "node scripts/cleanup.js"
+    "release": "turl-release"
   },
   "dependencies": {
     "framer-motion": "^12.29.2",

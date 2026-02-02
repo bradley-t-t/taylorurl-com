@@ -34,7 +34,7 @@ export default function Auth() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-gray-50 px-4 pb-16 pt-32"
+      className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-gray-50 px-4 pb-16 pt-40"
     >
       <div className="w-full max-w-md">
         <motion.div

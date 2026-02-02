@@ -2,6 +2,15 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [2.3] - 2026-02-02
+
+- Updated package.json to replace custom release and cleanup scripts with "turl-release" command
+- Added new public/turl.json file with version and project metadata
+- Removed public/version.json file with old version metadata
+- Deleted scripts/cleanup.js file
+- Deleted scripts/release.js file
+- Minor update to src/views/Auth.jsx file with unspecified changes
+
 ## [2.2] - 2026-02-01
 
 - Added new Auth view component at src/views/Auth.jsx
