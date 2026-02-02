@@ -2,6 +2,10 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [1.5] - 2026-02-01
+
+- Version update
+
 ## [1.4] - 2026-02-01
 
 - Version update
