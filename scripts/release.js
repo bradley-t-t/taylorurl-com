@@ -89,6 +89,8 @@ function getActualCodeDiff() {
         if (staged) return staged;
         const unstaged = execSync('git diff -U3', {encoding: 'utf8', maxBuffer: 1024 * 1024 * 10}).trim();
         if (unstaged) return unstaged;
+        const lastCommit = execSync('git diff HEAD~1 -U3', {encoding: 'utf8', maxBuffer: 1024 * 1024 * 10}).trim();
+        if (lastCommit) return lastCommit;
         return '';
     } catch {
         return '';
@@ -243,8 +245,15 @@ async function generateCommitMessage(changedFiles, codeDiff, detailedChanges, ol
 
     if (!apiKey) {
         console.log('No GROK_API_KEY found in .env, using default commit message');
-        return `TaylorURL Release: v${newVersion}`;
+        return `TaylorURL Release: v${newVersion}\n\n- Version bump`;
     }
+
+    if (!codeDiff || codeDiff.trim().length === 0) {
+        console.log('No code diff detected, using default commit message');
+        return `TaylorURL Release: v${newVersion}\n\n- Version bump`;
+    }
+
+    console.log(`Diff size: ${codeDiff.length} chars, sending to Grok API...`);
 
     const prompt = `Analyze this git diff and generate a commit message. Version bump from ${oldVersion} to ${newVersion}.
 
@@ -285,13 +294,20 @@ IMPORTANT RULES:
         });
 
         const data = await response.json();
+        
+        if (!response.ok) {
+            console.log(`API error: ${response.status} - ${JSON.stringify(data)}`);
+            return `TaylorURL Release: v${newVersion}\n\n- Version bump`;
+        }
+        
         const message = data.choices?.[0]?.message?.content?.trim();
 
         if (message) {
+            console.log('Grok API generated commit message successfully');
             return message;
         }
     } catch (error) {
-        console.log('AI generation failed, using default message');
+        console.log('AI generation failed:', error.message);
     }
 
     return `TaylorURL Release: v${newVersion}\n\n- Version bump`;
@@ -302,6 +318,13 @@ async function main() {
     const newVersion = incrementVersion(oldVersion);
 
     console.log(`Version: ${oldVersion} -> ${newVersion}`);
+
+    const originalChangedFiles = getChangedFiles();
+    const originalCodeDiff = getActualCodeDiff();
+    const originalDetailedChanges = getDetailedChanges();
+
+    console.log('\nOriginal changes detected:');
+    console.log(originalChangedFiles || 'No changes detected');
 
     console.log('\nRunning cleanup...');
     try {
@@ -317,13 +340,6 @@ async function main() {
     } catch (error) {
         console.log('Format skipped (prettier may not be installed)');
     }
-
-    const originalChangedFiles = getChangedFiles();
-    const originalCodeDiff = getActualCodeDiff();
-    const originalDetailedChanges = getDetailedChanges();
-
-    console.log('\nOriginal changes detected:');
-    console.log(originalChangedFiles || 'No changes detected');
 
     if (!originalChangedFiles && !originalCodeDiff) {
         console.log('\nNo changes to release. Exiting.');
