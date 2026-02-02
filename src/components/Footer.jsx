@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Footer({ email, copied, copyEmail, onEmailClick }) {
-  function handle(e) {
-    if (onEmailClick) {
-      e.preventDefault()
-      onEmailClick(e)
-    }
-  }
-
+function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -15,11 +8,11 @@ function Footer({ email, copied, copyEmail, onEmailClick }) {
       <div className="container relative mx-auto px-6 py-16">
         <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link to="/" className="mb-4 inline-block">
-              <span className="text-2xl font-bold">
-                <span className="text-gradient">Taylor</span>
-                <span className="text-gray-900">URL</span>
-              </span>
+            <Link
+              to="/"
+              className="group mb-4 inline-block transition-all duration-300 hover:scale-105"
+            >
+              <span className="logo-wave-dark text-2xl font-bold">TaylorURL</span>
             </Link>
             <p className="mb-6 text-gray-600">Building exceptional digital experiences.</p>
           </div>

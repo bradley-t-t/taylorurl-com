@@ -60,7 +60,9 @@ export default function About() {
             </div>
 
             <div className="mb-16">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900">Core Skills</h2>
+              <h2 className="mb-6 text-2xl font-bold text-gray-900">
+                <span className="logo-wave-dark">Core Skills</span>
+              </h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 {skills.map(skill => (
                   <div
@@ -75,7 +77,9 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="mb-6 text-2xl font-bold text-gray-900">What I Value</h2>
+              <h2 className="mb-6 text-2xl font-bold text-gray-900">
+                <span className="logo-wave-dark">What I Value</span>
+              </h2>
               <div className="grid gap-8 sm:grid-cols-2">
                 {values.map(value => {
                   const Icon = value.icon
@@ -98,7 +102,9 @@ export default function About() {
       <section className="border-t border-gray-200 bg-gray-50 py-16">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">Let's Work Together</h2>
+            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+              Let's <span className="logo-wave-dark">Work Together</span>
+            </h2>
             <p className="mb-6 text-gray-600">
               Ready to bring your project to life? Let's talk about how I can help.
             </p>

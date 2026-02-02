@@ -78,7 +78,7 @@ function ContactModal({ onClose, onSubmit, email }) {
         aria-labelledby="contact-title"
         ref={dialogRef}
       >
-        <div className="absolute -right-2 -top-2 h-32 w-32 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 opacity-50 blur-3xl" />
+        <div className="absolute -right-2 -top-2 h-32 w-32 rounded-full bg-gradient-to-br from-gray-100 to-gray-100 opacity-50 blur-3xl" />
 
         <button
           className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-all hover:rotate-90 hover:bg-gray-100 hover:text-gray-900"
@@ -96,7 +96,7 @@ function ContactModal({ onClose, onSubmit, email }) {
         </button>
 
         <div className="relative mb-6">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-700">
             <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
@@ -119,12 +119,12 @@ function ContactModal({ onClose, onSubmit, email }) {
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="firstName" className="mb-2 block text-sm font-semibold text-gray-900">
-                First Name <span className="text-red-500">*</span>
+                First Name <span className="text-gray-500">*</span>
               </label>
               <input
                 id="firstName"
                 ref={firstFieldRef}
-                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10"
+                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-500/10"
                 value={firstName}
                 onChange={e => setFirstName(e.target.value)}
                 required
@@ -134,11 +134,11 @@ function ContactModal({ onClose, onSubmit, email }) {
             </div>
             <div>
               <label htmlFor="lastName" className="mb-2 block text-sm font-semibold text-gray-900">
-                Last Name <span className="text-red-500">*</span>
+                Last Name <span className="text-gray-500">*</span>
               </label>
               <input
                 id="lastName"
-                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10"
+                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-500/10"
                 value={lastName}
                 onChange={e => setLastName(e.target.value)}
                 required
@@ -153,7 +153,7 @@ function ContactModal({ onClose, onSubmit, email }) {
             </label>
             <input
               id="phone"
-              className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10"
+              className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-500/10"
               value={phone}
               onChange={e => setPhone(e.target.value)}
               autoComplete="tel"
@@ -162,11 +162,11 @@ function ContactModal({ onClose, onSubmit, email }) {
           </div>
           <div>
             <label htmlFor="message" className="mb-2 block text-sm font-semibold text-gray-900">
-              Your Message <span className="text-red-500">*</span>
+              Your Message <span className="text-gray-500">*</span>
             </label>
             <textarea
               id="message"
-              className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10"
+              className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 transition-all focus:border-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-500/10"
               rows={5}
               value={message}
               onChange={e => setMessage(e.target.value)}
@@ -184,7 +184,7 @@ function ContactModal({ onClose, onSubmit, email }) {
             </button>
             <button
               type="submit"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary-500 to-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition-all hover:scale-105 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-gray-500 to-gray-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-500/30 transition-all hover:scale-105 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
               disabled={disabled}
             >
               <span className="relative z-10">{submitting ? 'Opening...' : 'Open Email'}</span>
@@ -201,7 +201,7 @@ function ContactModal({ onClose, onSubmit, email }) {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-primary-600 to-accent-600 opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-gray-800 to-gray-600 opacity-0 transition-opacity group-hover:opacity-100" />
             </button>
           </div>
         </form>

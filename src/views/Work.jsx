@@ -100,7 +100,9 @@ export default function Work() {
       <section className="border-t border-gray-200 bg-gray-50 py-16">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">Want to See More?</h2>
+            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+              Want to <span className="logo-wave-dark">See More?</span>
+            </h2>
             <p className="mb-6 text-gray-600">
               These are just a few examples. Let's discuss how I can help with your project.
             </p>

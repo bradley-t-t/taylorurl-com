@@ -8,7 +8,7 @@ function Hero({ email, copied, copyEmail, openContact }) {
 
   return (
     <header
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 via-white to-primary-50/30 pt-16"
+      className="to-primary-50/30 relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 via-white pt-16"
       role="banner"
       data-reveal
       data-reveal-from="left"
@@ -22,10 +22,10 @@ function Hero({ email, copied, copyEmail, openContact }) {
         data-reveal-delay="60"
       >
         <div className="max-w-4xl py-20" data-reveal data-reveal-delay="120">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50/50 px-4 py-2 text-sm font-medium text-primary-700 backdrop-blur-sm">
+          <div className="border-primary-200 bg-primary-50/50 text-primary-700 mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-500 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary-600" />
+              <span className="bg-primary-500 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-gray-900" />
             </span>
             Available for new projects
           </div>
@@ -51,7 +51,7 @@ function Hero({ email, copied, copyEmail, openContact }) {
             <a
               href={'mailto:' + email}
               onClick={open}
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary-500 via-primary-600 to-accent-500 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary-500/30 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/40"
+              className="from-primary-500 via-primary-600 to-accent-500 shadow-primary-500/30 hover:shadow-primary-500/40 group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r px-8 py-4 text-lg font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
             >
               <span className="relative z-10">Start Your Project</span>
               <svg
@@ -67,15 +67,15 @@ function Hero({ email, copied, copyEmail, openContact }) {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-primary-600 via-primary-700 to-accent-600 opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="from-primary-600 via-primary-700 to-accent-600 absolute inset-0 -z-0 bg-gradient-to-r opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
 
             <button
               onClick={copyEmail}
               className={`group inline-flex items-center gap-2 rounded-full border-2 px-8 py-4 text-lg font-semibold transition-all hover:scale-105 ${
                 copied
-                  ? 'border-green-500 bg-green-50 text-green-700 shadow-lg shadow-green-500/20'
-                  : 'border-gray-300 bg-white text-gray-700 shadow-lg hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700'
+                  ? 'border-gray-500 bg-gray-50 text-gray-700 shadow-lg shadow-gray-500/20'
+                  : 'hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700 border-gray-300 bg-white text-gray-700 shadow-lg'
               }`}
             >
               {copied ? (
@@ -118,7 +118,7 @@ function Hero({ email, copied, copyEmail, openContact }) {
           >
             <div className="flex items-center gap-2">
               <svg
-                className="h-5 w-5 text-primary-500"
+                className="h-5 w-5 text-gray-700"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -134,7 +134,7 @@ function Hero({ email, copied, copyEmail, openContact }) {
             </div>
             <div className="flex items-center gap-2">
               <svg
-                className="h-5 w-5 text-accent-500"
+                className="text-accent-500 h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -150,7 +150,7 @@ function Hero({ email, copied, copyEmail, openContact }) {
             </div>
             <div className="flex items-center gap-2">
               <svg
-                className="h-5 w-5 text-primary-500"
+                className="h-5 w-5 text-gray-700"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

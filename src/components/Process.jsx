@@ -67,7 +67,7 @@ function Process() {
         data-reveal-delay="40"
       >
         <div className="mb-16 text-center" data-reveal data-reveal-delay="80">
-          <div className="text-accent-700 mb-4 inline-flex items-center gap-2 rounded-full border border-accent-200 bg-accent-50 px-4 py-1.5 text-sm font-medium">
+          <div className="text-accent-700 border-accent-200 bg-accent-50 mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium">
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
@@ -98,10 +98,10 @@ function Process() {
               data-reveal-delay={120 + i * 70}
             >
               <div
-                className="relative h-full overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-6 transition-all focus-within:border-primary-300 focus-within:shadow-lg hover:border-primary-300 hover:shadow-lg"
+                className="relative h-full overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-6 transition-all focus-within:border-gray-300 focus-within:shadow-lg hover:border-gray-300 hover:shadow-lg"
                 tabIndex={0}
               >
-                <div className="absolute right-0 top-0 h-24 w-24 -translate-y-6 translate-x-6 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 opacity-0 blur-xl transition-all group-hover:opacity-100" />
+                <div className="absolute right-0 top-0 h-24 w-24 -translate-y-6 translate-x-6 rounded-full bg-gradient-to-br from-gray-100 to-gray-100 opacity-0 blur-xl transition-all group-hover:opacity-100" />
 
                 <div className="relative">
                   <div className="mb-4 flex items-start justify-between">
@@ -112,7 +112,7 @@ function Process() {
                   </div>
 
                   <h3 className="mb-2 font-display text-xl font-bold text-gray-900">{s.title}</h3>
-                  <p className="mb-2 text-sm font-semibold text-primary-600">{s.summary}</p>
+                  <p className="mb-2 text-sm font-semibold text-gray-900">{s.summary}</p>
                   <p className="text-sm leading-relaxed text-gray-600">{s.detail}</p>
                 </div>
               </div>
@@ -121,9 +121,9 @@ function Process() {
         </ol>
 
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border-2 border-primary-200 bg-primary-50/50 px-6 py-3 text-sm font-medium text-gray-700 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border-2 border-gray-200 bg-gray-50/50 px-6 py-3 text-sm font-medium text-gray-700 backdrop-blur-sm">
             <svg
-              className="h-5 w-5 text-primary-500"
+              className="h-5 w-5 text-gray-700"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

@@ -2,6 +2,11 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [1.9] - 2026-02-01
+
+- Added new ScrollToTop.jsx component file
+- Initial setup of ScrollToTop component structure
+
 ## [1.8] - 2026-02-01
 
 - Updated README.md to add a smiley face to the personal note.

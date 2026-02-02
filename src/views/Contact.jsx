@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, Linkedin, Github, Check } from 'lucide-react'
+import { Mail, Github, Check } from 'lucide-react'
 import PageHero from '@components/PageHero'
 
 export default function Contact() {
@@ -42,16 +42,10 @@ ${formData.message}
       link: 'mailto:trenton@taylorurl.com',
     },
     {
-      icon: Linkedin,
-      title: 'LinkedIn',
-      content: 'Connect with me',
-      link: 'https://linkedin.com',
-    },
-    {
       icon: Github,
       title: 'GitHub',
-      content: 'View my code',
-      link: 'https://github.com',
+      content: 'bradley-t-t',
+      link: 'https://github.com/bradley-t-t',
     },
   ]
 
@@ -65,7 +59,7 @@ ${formData.message}
       <section className="bg-white py-16">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 grid gap-4 md:grid-cols-3">
+            <div className="mb-12 grid gap-4 md:grid-cols-2">
               {contactMethods.map(method => {
                 const Icon = method.icon
                 return (
@@ -152,7 +146,13 @@ ${formData.message}
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                      className="w-full appearance-none rounded-lg border border-gray-300 bg-white px-4 py-2 pr-10 focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'right 0.75rem center',
+                        backgroundSize: '1.25rem',
+                      }}
                     >
                       <option value="">Select project type</option>
                       <option value="new-website">New Website</option>
@@ -194,7 +194,9 @@ ${formData.message}
             </div>
 
             <div className="mt-8 rounded-lg bg-gray-50 p-6">
-              <h3 className="mb-4 font-semibold text-gray-900">What to Expect</h3>
+              <h3 className="mb-4 font-semibold text-gray-900">
+                <span className="logo-wave-dark">What to Expect</span>
+              </h3>
               <ul className="space-y-2">
                 {[
                   'Response within 24 hours',

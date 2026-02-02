@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-light-bg">
+    <div className="bg-light-bg min-h-screen">
       <Navigation />
       <motion.main
         initial={{ opacity: 0, y: 20 }}

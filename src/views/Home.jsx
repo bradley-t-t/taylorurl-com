@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   ArrowRight,
   Zap,
@@ -19,6 +19,34 @@ import {
   Phone,
   Mail,
 } from 'lucide-react'
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  PieChart,
+  Pie,
+  Cell,
+} from 'recharts'
+import { MapContainer, TileLayer, Circle, Marker, Popup } from 'react-leaflet'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
+import markerIcon from 'leaflet/dist/images/marker-icon.png'
+import markerShadow from 'leaflet/dist/images/marker-shadow.png'
+
+delete L.Icon.Default.prototype._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+})
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -35,72 +63,216 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white" />
 
         <div className="container relative z-10 mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600"
+            >
               <MapPin className="h-4 w-4" />
-              Helping local businesses get online
-            </div>
+              Serving local businesses in the Houston area
+            </motion.div>
 
-            <h1 className="mb-8 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-8 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl"
+            >
               Your Business Deserves
               <br />
-              <span className="text-primary-600">A Professional Website</span>
-            </h1>
+              <span className="logo-wave-dark">A Professional Website</span>
+            </motion.h1>
 
-            <p className="mb-12 max-w-2xl text-xl leading-relaxed text-gray-600">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mb-12 max-w-2xl text-xl leading-relaxed text-gray-600"
+            >
               Stop losing customers to competitors with better websites. Get a fast, mobile-friendly
               site that turns visitors into paying customers.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-4"
+            >
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-colors hover:bg-gray-800"
+                className="group inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800"
               >
                 Get Your Free Quote
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/pricing"
-                className="inline-flex items-center gap-2 rounded-lg border-2 border-gray-900 px-8 py-4 text-lg font-medium text-gray-900 transition-colors hover:bg-gray-50"
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-gray-900 px-8 py-4 text-lg font-medium text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-gray-100"
               >
                 See Pricing
               </Link>
-            </div>
+            </motion.div>
 
-            <div className="mt-12 flex items-center gap-8 text-sm text-gray-500">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-12 flex items-center gap-8 text-sm text-gray-500"
+            >
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-green-600" />
+                <Check className="h-5 w-5 text-gray-700" />
                 No contracts
               </div>
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-green-600" />
+                <Check className="h-5 w-5 text-gray-700" />
                 Cancel anytime
               </div>
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-green-600" />
+                <Check className="h-5 w-5 text-gray-700" />
                 Free consultation
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       <section className="border-t border-gray-200 bg-gray-50 py-20">
         <div className="container mx-auto px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Is Your Business Invisible Online?
-            </h2>
-            <p className="text-lg text-gray-600">
-              97% of consumers search online for local businesses. Without a website, you're
-              invisible to potential customers actively looking for your services.
-            </p>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+                Is Your Business <span className="logo-wave-dark">Invisible Online?</span>
+              </h2>
+              <p className="mb-8 text-lg text-gray-600">
+                97% of consumers search online for local businesses. Without a website, you're
+                invisible to potential customers actively looking for your services.
+              </p>
+              <div className="rounded-xl border border-gray-200 bg-white p-6">
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                  How Customers Find Local Businesses
+                </h3>
+                <ResponsiveContainer width="100%" height={250}>
+                  <BarChart
+                    data={[
+                      { name: 'Google Search', value: 46 },
+                      { name: 'Social Media', value: 24 },
+                      { name: 'Word of Mouth', value: 18 },
+                      { name: 'Direct Visit', value: 8 },
+                      { name: 'Other', value: 4 },
+                    ]}
+                    layout="vertical"
+                    margin={{ top: 5, right: 30, left: 90, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" horizontal={false} />
+                    <XAxis
+                      type="number"
+                      domain={[0, 50]}
+                      tick={{ fill: '#6b7280', fontSize: 12 }}
+                      axisLine={false}
+                    />
+                    <YAxis
+                      type="category"
+                      dataKey="name"
+                      tick={{ fill: '#374151', fontSize: 12 }}
+                      axisLine={false}
+                      tickLine={false}
+                    />
+                    <Tooltip
+                      formatter={value => [`${value}%`, 'Percentage']}
+                      contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                    />
+                    <Bar dataKey="value" fill="#111827" radius={[0, 4, 4, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <div className="mb-8 text-center">
+                <div className="text-7xl font-bold text-gray-900">46%</div>
+                <div className="mt-2 text-lg text-gray-600">of all searches have local intent</div>
+              </div>
+              <div className="grid grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-gray-900">97%</div>
+                  <div className="text-sm text-gray-500">search online first</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-gray-900">72%</div>
+                  <div className="text-sm text-gray-500">visit within 5 miles</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-gray-900">88%</div>
+                  <div className="text-sm text-gray-500">trust online reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative border-t border-gray-200 bg-white py-24">
+        <div className="container mx-auto px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <div className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-500">
+                Service Area
+              </div>
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+                Serving the <span className="logo-wave-dark">Greater Houston Area</span>
+              </h2>
+              <p className="mb-8 text-lg text-gray-600">
+                From downtown Houston to the surrounding suburbs, we help local businesses establish
+                their online presence across the entire metro area.
+              </p>
+              <div className="grid grid-cols-3 gap-6">
+                <div className="rounded-lg bg-gray-100 p-4 text-center">
+                  <div className="text-3xl font-bold text-gray-900">100+</div>
+                  <div className="text-sm text-gray-600">Square Miles</div>
+                </div>
+                <div className="rounded-lg bg-gray-100 p-4 text-center">
+                  <div className="text-3xl font-bold text-gray-900">50+</div>
+                  <div className="text-sm text-gray-600">Cities Served</div>
+                </div>
+                <div className="rounded-lg bg-gray-100 p-4 text-center">
+                  <div className="text-3xl font-bold text-gray-900">7M+</div>
+                  <div className="text-sm text-gray-600">Population</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative z-0 overflow-hidden rounded-xl border border-gray-200">
+              <MapContainer
+                center={[29.7604, -95.3698]}
+                zoom={9}
+                style={{ height: '400px', width: '100%', zIndex: 0 }}
+                scrollWheelZoom={false}
+                zoomControl={false}
+              >
+                <TileLayer
+                  attribution="&copy; OpenStreetMap"
+                  url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                />
+                <Circle
+                  center={[29.7604, -95.3698]}
+                  radius={80467}
+                  pathOptions={{
+                    color: '#374151',
+                    fillColor: '#6b7280',
+                    fillOpacity: 0.2,
+                    weight: 2,
+                  }}
+                />
+                <Marker position={[29.7604, -95.3698]}>
+                  <Popup>
+                    <strong>TaylorURL</strong>
+                    <br />
+                    Houston, TX
+                  </Popup>
+                </Marker>
+              </MapContainer>
+            </div>
           </div>
         </div>
       </section>
@@ -109,7 +281,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Why Local Businesses Need a Website
+              Why Local Businesses <span className="logo-wave-dark">Need a Website</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
               A professional website is no longer optional. It's how customers find you, trust you,
@@ -171,23 +343,219 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-gray-900 py-24 text-white">
+      <section className="border-t border-gray-200 bg-gray-50 py-24">
+        <div className="container mx-auto px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <div className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-900">
+                Growth Data
+              </div>
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+                Websites Drive <span className="logo-wave-dark">Real Business Growth</span>
+              </h2>
+              <p className="mb-8 text-lg text-gray-600">
+                Businesses that invest in professional websites see consistent revenue growth
+                compared to those relying solely on word-of-mouth and social media.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <div className="text-3xl font-bold text-gray-900">+110%</div>
+                  <div className="text-sm text-gray-600">Average revenue increase with website</div>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <div className="text-3xl font-bold text-gray-400">+10%</div>
+                  <div className="text-sm text-gray-600">Without website (same period)</div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-white p-6">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                Revenue Growth Comparison (12 Months)
+              </h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart
+                  data={[
+                    { month: 'Jan', withSite: 100, withoutSite: 100 },
+                    { month: 'Mar', withSite: 118, withoutSite: 102 },
+                    { month: 'May', withSite: 140, withoutSite: 104 },
+                    { month: 'Jul', withSite: 165, withoutSite: 106 },
+                    { month: 'Sep', withSite: 188, withoutSite: 108 },
+                    { month: 'Nov', withSite: 210, withoutSite: 110 },
+                  ]}
+                  margin={{ top: 10, right: 10, left: 0, bottom: 5 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
+                  <XAxis
+                    dataKey="month"
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={false}
+                    tickLine={false}
+                    domain={[90, 220]}
+                  />
+                  <Tooltip
+                    formatter={(value, name) => [
+                      `${value}%`,
+                      name === 'withSite' ? 'With Website' : 'Without Website',
+                    ]}
+                    contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="withSite"
+                    stroke="#111827"
+                    strokeWidth={3}
+                    dot={{ fill: '#2563eb', strokeWidth: 2, r: 4 }}
+                    name="withSite"
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="withoutSite"
+                    stroke="#d1d5db"
+                    strokeWidth={2}
+                    strokeDasharray="5 5"
+                    dot={{ fill: '#d1d5db', strokeWidth: 2, r: 3 }}
+                    name="withoutSite"
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+              <div className="mt-4 flex justify-center gap-8 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="h-3 w-8 rounded-full bg-blue-600" />
+                  <span className="text-gray-600">With Website</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-0.5 w-8 border-t-2 border-dashed border-gray-300" />
+                  <span className="text-gray-600">Without Website</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-gray-200 bg-white py-24">
+        <div className="container mx-auto px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="order-2 rounded-xl border border-gray-200 bg-white p-6 lg:order-1">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500">
+                Mobile Search Share by Year
+              </h3>
+              <ResponsiveContainer width="100%" height={280}>
+                <BarChart
+                  data={[
+                    { year: '2022', mobile: 58, desktop: 42 },
+                    { year: '2024', mobile: 64, desktop: 36 },
+                    { year: '2026', mobile: 70, desktop: 30 },
+                  ]}
+                  margin={{ top: 10, right: 10, left: 0, bottom: 5 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
+                  <XAxis
+                    dataKey="year"
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <Tooltip
+                    formatter={value => [`${value}%`, 'Share']}
+                    contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                  />
+                  <Bar
+                    dataKey="mobile"
+                    fill="#111827"
+                    name="Mobile"
+                    radius={[4, 4, 0, 0]}
+                    barSize={40}
+                  />
+                  <Bar
+                    dataKey="desktop"
+                    fill="#e5e7eb"
+                    name="Desktop"
+                    radius={[4, 4, 0, 0]}
+                    barSize={40}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+              <div className="mt-4 flex justify-center gap-8 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="h-3 w-3 rounded bg-gray-900" />
+                  <span className="text-gray-600">Mobile</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-3 w-3 rounded bg-gray-200" />
+                  <span className="text-gray-600">Desktop</span>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-900">
+                Mobile First
+              </div>
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+                70% of Searches Are <span className="logo-wave-dark">Mobile</span>
+              </h2>
+              <p className="mb-8 text-lg text-gray-600">
+                Your customers are searching on their phones. If your website doesn't look great on
+                mobile, you're losing business to competitors who do.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                    <Smartphone className="h-5 w-5 text-gray-900" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Mobile-First Design</div>
+                    <div className="text-sm text-gray-600">
+                      Every site built for phone-first experience
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                    <Zap className="h-5 w-5 text-gray-900" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Fast Load Times</div>
+                    <div className="text-sm text-gray-600">
+                      Optimized for slow mobile connections
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-gray-200 bg-gray-50 py-24">
         <div className="container mx-auto px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">Simple, Transparent Pricing</h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-400">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+              Simple, <span className="logo-wave-dark">Transparent Pricing</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
               No hidden fees. No long-term contracts. Just a professional website for your business
               at a price you can afford.
             </p>
           </div>
 
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-400">
+            <div className="rounded-xl border border-gray-200 bg-white p-8">
+              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-500">
                 One-Time
               </div>
-              <div className="mb-4 text-5xl font-bold">$500+</div>
-              <p className="mb-6 text-gray-400">Setup fee based on your needs</p>
+              <div className="mb-4 text-5xl font-bold text-gray-900">$500+</div>
+              <p className="mb-6 text-gray-600">Setup fee based on your needs</p>
               <ul className="space-y-3">
                 {[
                   'Custom design',
@@ -196,19 +564,19 @@ export default function Home() {
                   'Contact forms',
                   'Fast hosting',
                 ].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-sm">
-                    <Check className="h-5 w-5 text-green-500" />
+                  <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
+                    <Check className="h-5 w-5 text-gray-500" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-400">
+            <div className="rounded-xl border-2 border-gray-900 bg-white p-8">
+              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-500">
                 Monthly
               </div>
-              <div className="mb-4 text-5xl font-bold">$49.99</div>
-              <p className="mb-6 text-gray-400">Everything to keep your site running</p>
+              <div className="mb-4 text-5xl font-bold text-gray-900">$49.99</div>
+              <p className="mb-6 text-gray-600">Everything to keep your site running</p>
               <ul className="space-y-3">
                 {[
                   'Hosting included',
@@ -217,8 +585,8 @@ export default function Home() {
                   'Technical support',
                   'Monthly backups',
                 ].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-sm">
-                    <Check className="h-5 w-5 text-green-500" />
+                  <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
+                    <Check className="h-5 w-5 text-gray-500" />
                     {item}
                   </li>
                 ))}
@@ -229,7 +597,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               to="/pricing"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-medium text-gray-900 transition-colors hover:bg-gray-100"
+              className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800"
             >
               View Full Pricing Details
               <ArrowRight className="h-5 w-5" />
@@ -241,7 +609,9 @@ export default function Home() {
       <section className="border-t border-gray-200 bg-white py-24">
         <div className="container mx-auto px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">How It Works</h2>
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+              <span className="logo-wave-dark">How It Works</span>
+            </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
               Getting your business online is easier than you think. Here's the simple process.
             </p>
@@ -289,7 +659,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              What Business Owners Say
+              What Business Owners <span className="logo-wave-dark">Say</span>
             </h2>
           </div>
 
@@ -326,7 +696,7 @@ export default function Home() {
               >
                 <div className="mb-4 flex gap-1">
                   {[...Array(item.stars)].map((_, j) => (
-                    <Star key={j} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={j} className="h-5 w-5 fill-gray-900 text-gray-900" />
                   ))}
                 </div>
                 <p className="mb-6 text-gray-700">"{item.quote}"</p>
@@ -344,7 +714,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Frequently Asked Questions
+              <span className="logo-wave-dark">Frequently Asked Questions</span>
             </h2>
           </div>
 
@@ -386,7 +756,7 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-600">Have more questions?</p>
-            <Link to="/contact" className="font-medium text-primary-600 hover:underline">
+            <Link to="/contact" className="font-medium text-gray-900 hover:underline">
               Get in touch
             </Link>
           </div>
@@ -398,7 +768,7 @@ export default function Home() {
           <div className="mx-auto max-w-2xl rounded-2xl border border-gray-200 bg-white p-8 text-center md:p-12">
             <MessageSquare className="mx-auto mb-6 h-12 w-12 text-gray-400" />
             <h2 className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
-              Get Tips for Your Local Business
+              Get Tips for <span className="logo-wave-dark">Your Local Business</span>
             </h2>
             <p className="mb-8 text-gray-600">
               Subscribe to get free tips on marketing your local business online. No spam, just
@@ -425,24 +795,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-gray-900 py-24 text-white">
+      <section className="border-t border-gray-200 bg-gray-100 py-24">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Ready to Get More Customers?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-400">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Ready to Get <span className="logo-wave-dark">More Customers?</span>
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-600">
             Stop letting competitors with better websites steal your customers. Let's build
             something that works for your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-medium text-gray-900 transition-colors hover:bg-gray-100"
+              className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800"
             >
               Get Your Free Quote
               <ArrowRight className="h-5 w-5" />
             </Link>
             <a
               href="tel:+1234567890"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-lg font-medium text-white transition-colors hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-lg border-2 border-gray-900 px-8 py-4 text-lg font-medium text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-gray-200"
             >
               <Phone className="h-5 w-5" />
               Call Me

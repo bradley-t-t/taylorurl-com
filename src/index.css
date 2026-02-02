@@ -19,7 +19,33 @@
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply text-primary-600;
+  .logo-wave {
+    background: linear-gradient(90deg, #9ca3af, #ffffff, #6b7280, #ffffff, #9ca3af);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: waveGradient 4s ease-in-out infinite;
+  }
+
+  .logo-wave-dark {
+    background: linear-gradient(90deg, #111827, #6b7280, #374151, #6b7280, #111827);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: waveGradient 4s ease-in-out infinite;
+  }
+}
+
+@keyframes waveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

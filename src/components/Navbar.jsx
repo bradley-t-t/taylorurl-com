@@ -37,29 +37,29 @@ function Navbar({ email, activeSection = '', onEmailClick }) {
                   key={l.id}
                   href={'#' + l.id}
                   className={`relative text-sm font-medium transition-colors ${
-                    active ? 'text-primary-600' : 'text-gray-600 hover:text-gray-900'
+                    active ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
                   }`}
                   {...(active ? { 'aria-current': 'true' } : {})}
                 >
                   {l.label}
                   {active && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-primary-500 to-accent-500" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-gradient-to-r from-gray-500 to-gray-700" />
                   )}
                 </a>
               )
             })}
             <a
               href={'mailto:' + email}
-              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary-500/40"
+              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-gray-500 to-gray-800 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-gray-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-gray-500/40"
               onClick={click}
             >
               <span className="relative z-10">Get in Touch</span>
-              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-gray-800 to-gray-700 opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
           </div>
           <a
             href={'mailto:' + email}
-            className="rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition-all hover:scale-105 hover:shadow-xl md:hidden"
+            className="rounded-full bg-gradient-to-r from-gray-500 to-gray-800 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-gray-500/30 transition-all hover:scale-105 hover:shadow-xl md:hidden"
             onClick={click}
           >
             Contact

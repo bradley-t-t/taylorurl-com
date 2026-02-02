@@ -70,7 +70,7 @@ function Offerings() {
         data-reveal-delay="40"
       >
         <div className="mb-16 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-medium text-primary-700">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-sm font-medium text-gray-700">
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
@@ -97,16 +97,16 @@ function Offerings() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" role="list">
           {OFFER_CARDS.map(c => (
             <div
-              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white via-gray-50/50 to-primary-50/30 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-white via-gray-50/50 to-gray-50/30 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-500/10"
               role="listitem"
               key={c.title}
               data-reveal
               data-reveal-delay={c.delay}
             >
-              <div className="absolute right-0 top-0 h-32 w-32 -translate-y-8 translate-x-8 rounded-full bg-gradient-to-br from-primary-100 to-accent-100 opacity-50 blur-2xl transition-all group-hover:scale-150" />
+              <div className="absolute right-0 top-0 h-32 w-32 -translate-y-8 translate-x-8 rounded-full bg-gradient-to-br from-gray-100 to-gray-100 opacity-50 blur-2xl transition-all group-hover:scale-150" />
 
               <div className="relative">
-                <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 p-3 text-white shadow-lg shadow-primary-500/30">
+                <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-gray-500 to-gray-700 p-3 text-white shadow-lg shadow-gray-500/30">
                   {c.icon}
                 </div>
 
@@ -117,7 +117,7 @@ function Offerings() {
                   {c.points.map(p => (
                     <li key={p} className="flex items-start gap-3 text-sm text-gray-700">
                       <svg
-                        className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-500"
+                        className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-700"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
