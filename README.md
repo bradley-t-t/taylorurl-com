@@ -113,4 +113,4 @@ npm run preview
 
 ---
 
-Built by Trenton Taylor • [trenton@taylorurl.com](mailto:trenton@taylorurl.com)  • I like building cool stuff
+Built by Trenton Taylor • [trenton@taylorurl.com](mailto:trenton@taylorurl.com)  • I like building cool stuff.
