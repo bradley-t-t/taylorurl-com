@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-white font-sans text-gray-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-primary-600;
+  }
+}
