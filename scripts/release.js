@@ -142,12 +142,14 @@ ${detailedChanges}
 IMPORTANT RULES:
 - Start with "## [${newVersion}] - ${date}"
 - Add blank line after header
+- Create ONE bullet point for EACH distinct change visible in the diff
+- Group related changes but keep each significant modification as its own line
 - ONLY list changes that are ACTUALLY visible in the diff above
 - If the diff only shows formatting/whitespace changes, say "- Code formatting and cleanup"
 - Do NOT make up features or changes that aren't in the diff
 - Be specific and accurate based on the actual code changes
 - List changes as bullet points with "- " prefix
-- Max 8 bullet points
+- Include ALL meaningful changes, no max limit
 - No emojis
 - Just return the changelog entry, nothing else`;
 
@@ -161,7 +163,7 @@ IMPORTANT RULES:
             body: JSON.stringify({
                 model: 'grok-3-latest',
                 messages: [{role: 'user', content: prompt}],
-                max_tokens: 400,
+                max_tokens: 1000,
                 temperature: 0.2
             })
         });
@@ -269,12 +271,14 @@ ${detailedChanges}
 IMPORTANT RULES:
 - First line MUST be exactly: "TaylorURL Release: v${newVersion}"
 - Add blank line after first line
+- Create ONE bullet point for EACH distinct change visible in the diff
+- Group related changes but keep each significant modification as its own line
 - ONLY list changes that are ACTUALLY visible in the diff above
 - If the diff only shows formatting/whitespace changes, say "- Code formatting and cleanup"
 - Do NOT make up features or changes that aren't in the diff
 - Be specific and accurate based on the actual code changes
 - Use "- " prefix for each bullet point
-- Max 8 bullet points
+- Include ALL meaningful changes, no max limit
 - No emojis
 - Just return the commit message, nothing else`;
 
@@ -288,7 +292,7 @@ IMPORTANT RULES:
             body: JSON.stringify({
                 model: 'grok-3-latest',
                 messages: [{role: 'user', content: prompt}],
-                max_tokens: 500,
+                max_tokens: 1000,
                 temperature: 0.2
             })
         });

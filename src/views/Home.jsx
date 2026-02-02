@@ -78,7 +78,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8 text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl"
+              className="mb-8 text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Your Business Deserves
               <br />
@@ -89,7 +89,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-12 max-w-2xl text-xl leading-relaxed text-gray-600"
+              className="mb-12 max-w-2xl text-lg leading-relaxed text-gray-600 sm:text-xl"
             >
               Stop losing customers to competitors with better websites. Get a fast, mobile-friendly
               site that turns visitors into paying customers.
@@ -99,18 +99,18 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col gap-4 sm:flex-row sm:flex-wrap"
             >
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800"
+                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800 sm:px-8 sm:py-4 sm:text-lg"
               >
                 Get Your Free Quote
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/pricing"
-                className="inline-flex items-center gap-2 rounded-lg border-2 border-gray-900 px-8 py-4 text-lg font-medium text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-gray-100"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-gray-900 px-6 py-3 text-base font-medium text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-gray-100 sm:px-8 sm:py-4 sm:text-lg"
               >
                 See Pricing
               </Link>
@@ -120,7 +120,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-12 flex items-center gap-8 text-sm text-gray-500"
+              className="mt-12 flex flex-wrap items-center gap-4 text-sm text-gray-500 sm:gap-8"
             >
               <div className="flex items-center gap-2">
                 <Check className="h-5 w-5 text-gray-700" />
@@ -191,21 +191,23 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center justify-center">
               <div className="mb-8 text-center">
-                <div className="text-7xl font-bold text-gray-900">46%</div>
-                <div className="mt-2 text-lg text-gray-600">of all searches have local intent</div>
+                <div className="text-5xl font-bold text-gray-900 sm:text-7xl">46%</div>
+                <div className="mt-2 text-base text-gray-600 sm:text-lg">
+                  of all searches have local intent
+                </div>
               </div>
-              <div className="grid grid-cols-3 gap-6 text-center">
+              <div className="grid grid-cols-3 gap-3 text-center sm:gap-6">
                 <div>
-                  <div className="text-3xl font-bold text-gray-900">97%</div>
-                  <div className="text-sm text-gray-500">search online first</div>
+                  <div className="text-xl font-bold text-gray-900 sm:text-3xl">97%</div>
+                  <div className="text-xs text-gray-500 sm:text-sm">search online first</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-gray-900">72%</div>
-                  <div className="text-sm text-gray-500">visit within 5 miles</div>
+                  <div className="text-xl font-bold text-gray-900 sm:text-3xl">72%</div>
+                  <div className="text-xs text-gray-500 sm:text-sm">visit within 5 miles</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-gray-900">88%</div>
-                  <div className="text-sm text-gray-500">trust online reviews</div>
+                  <div className="text-xl font-bold text-gray-900 sm:text-3xl">88%</div>
+                  <div className="text-xs text-gray-500 sm:text-sm">trust online reviews</div>
                 </div>
               </div>
             </div>
@@ -227,18 +229,18 @@ export default function Home() {
                 From downtown Houston to the surrounding suburbs, we help local businesses establish
                 their online presence across the entire metro area.
               </p>
-              <div className="grid grid-cols-3 gap-6">
-                <div className="rounded-lg bg-gray-100 p-4 text-center">
-                  <div className="text-3xl font-bold text-gray-900">100+</div>
-                  <div className="text-sm text-gray-600">Square Miles</div>
+              <div className="grid grid-cols-3 gap-3 sm:gap-6">
+                <div className="rounded-lg bg-gray-100 p-3 text-center sm:p-4">
+                  <div className="text-xl font-bold text-gray-900 sm:text-3xl">100+</div>
+                  <div className="text-xs text-gray-600 sm:text-sm">Square Miles</div>
                 </div>
-                <div className="rounded-lg bg-gray-100 p-4 text-center">
-                  <div className="text-3xl font-bold text-gray-900">50+</div>
-                  <div className="text-sm text-gray-600">Cities Served</div>
+                <div className="rounded-lg bg-gray-100 p-3 text-center sm:p-4">
+                  <div className="text-xl font-bold text-gray-900 sm:text-3xl">50+</div>
+                  <div className="text-xs text-gray-600 sm:text-sm">Cities Served</div>
                 </div>
-                <div className="rounded-lg bg-gray-100 p-4 text-center">
-                  <div className="text-3xl font-bold text-gray-900">7M+</div>
-                  <div className="text-sm text-gray-600">Population</div>
+                <div className="rounded-lg bg-gray-100 p-3 text-center sm:p-4">
+                  <div className="text-xl font-bold text-gray-900 sm:text-3xl">7M+</div>
+                  <div className="text-xs text-gray-600 sm:text-sm">Population</div>
                 </div>
               </div>
             </div>
@@ -246,9 +248,10 @@ export default function Home() {
               <MapContainer
                 center={[29.7604, -95.3698]}
                 zoom={9}
-                style={{ height: '400px', width: '100%', zIndex: 0 }}
+                style={{ height: '300px', width: '100%', zIndex: 0 }}
                 scrollWheelZoom={false}
                 zoomControl={false}
+                className="sm:!h-[400px]"
               >
                 <TileLayer
                   attribution="&copy; OpenStreetMap"
@@ -357,14 +360,18 @@ export default function Home() {
                 Businesses that invest in professional websites see consistent revenue growth
                 compared to those relying solely on word-of-mouth and social media.
               </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <div className="text-3xl font-bold text-gray-900">+110%</div>
-                  <div className="text-sm text-gray-600">Average revenue increase with website</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                <div className="rounded-lg border border-gray-200 bg-white p-3 sm:p-4">
+                  <div className="text-xl font-bold text-gray-900 sm:text-3xl">+110%</div>
+                  <div className="text-xs text-gray-600 sm:text-sm">
+                    Average revenue increase with website
+                  </div>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <div className="text-3xl font-bold text-gray-400">+10%</div>
-                  <div className="text-sm text-gray-600">Without website (same period)</div>
+                <div className="rounded-lg border border-gray-200 bg-white p-3 sm:p-4">
+                  <div className="text-xl font-bold text-gray-400 sm:text-3xl">+10%</div>
+                  <div className="text-xs text-gray-600 sm:text-sm">
+                    Without website (same period)
+                  </div>
                 </div>
               </div>
             </div>
@@ -510,7 +517,7 @@ export default function Home() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100">
                     <Smartphone className="h-5 w-5 text-gray-900" />
                   </div>
                   <div>
@@ -521,7 +528,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100">
                     <Zap className="h-5 w-5 text-gray-900" />
                   </div>
                   <div>
@@ -549,12 +556,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 bg-white p-8">
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:gap-8">
+            <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
               <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-500">
                 One-Time
               </div>
-              <div className="mb-4 text-5xl font-bold text-gray-900">$500+</div>
+              <div className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">$500+</div>
               <p className="mb-6 text-gray-600">Setup fee based on your needs</p>
               <ul className="space-y-3">
                 {[
@@ -571,11 +578,11 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border-2 border-gray-900 bg-white p-8">
+            <div className="rounded-xl border-2 border-gray-900 bg-white p-6 sm:p-8">
               <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-500">
                 Monthly
               </div>
-              <div className="mb-4 text-5xl font-bold text-gray-900">$49.99</div>
+              <div className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">$49.99</div>
               <p className="mb-6 text-gray-600">Everything to keep your site running</p>
               <ul className="space-y-3">
                 {[

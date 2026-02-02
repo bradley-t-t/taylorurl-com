@@ -100,7 +100,7 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="mb-12 rounded-lg bg-gray-50 p-6">
+            <div className="mb-8 rounded-lg bg-gray-50 p-4 sm:mb-12 sm:p-6">
               <h2 className="mb-4 text-lg font-semibold text-gray-900">
                 Additional Optional Costs
               </h2>
@@ -112,7 +112,7 @@ export default function Pricing() {
                 {additionalCosts.map(item => (
                   <div
                     key={item.name}
-                    className="flex items-start justify-between gap-4 rounded border border-gray-200 bg-white px-4 py-3"
+                    className="flex flex-col gap-2 rounded border border-gray-200 bg-white px-3 py-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4 sm:px-4 sm:py-3"
                   >
                     <div>
                       <div className="font-medium text-gray-900">{item.name}</div>
@@ -124,7 +124,7 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-6">
+            <div className="rounded-lg border border-gray-200 p-4 sm:p-6">
               <h2 className="mb-6 text-lg font-semibold text-gray-900">How It Works</h2>
               <div className="space-y-6">
                 {steps.map(step => (

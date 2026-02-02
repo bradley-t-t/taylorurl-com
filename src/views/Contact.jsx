@@ -56,10 +56,10 @@ ${formData.message}
         description="Let's discuss your project and see how I can help bring your vision to life."
       />
 
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-6">
+      <section className="bg-white py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 grid gap-4 md:grid-cols-2">
+            <div className="mb-8 grid gap-4 sm:mb-12 sm:grid-cols-2">
               {contactMethods.map(method => {
                 const Icon = method.icon
                 return (
@@ -80,10 +80,12 @@ ${formData.message}
               })}
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-6">
-              <h2 className="mb-6 text-lg font-semibold text-gray-900">Send a Message</h2>
+            <div className="rounded-lg border border-gray-200 p-4 sm:p-6">
+              <h2 className="mb-6 text-lg font-semibold text-gray-900">
+                <span className="logo-wave-dark">Send a Message</span>
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid gap-4 md:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-900">
                       Name *
