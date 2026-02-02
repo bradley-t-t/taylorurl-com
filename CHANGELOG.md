@@ -2,6 +2,10 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [2.1] - 2026-02-01
+
+- Added new configuration file vercel.json for deployment settings
+
 ## [2.0] - 2026-02-01
 
 - Updated `max_tokens` from 400 to 1000 for changelog generation in `scripts/release.js`.
