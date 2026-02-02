@@ -359,7 +359,7 @@ async function main() {
         fs.unlinkSync(commitMsgPath);
         console.log('\nCommitted successfully');
 
-        execSync('git push origin main', {stdio: 'inherit'});
+        execSync('git push origin master', {stdio: 'inherit'});
         console.log('Pushed to GitHub');
     } catch (error) {
         try { fs.unlinkSync(commitMsgPath); } catch {}
