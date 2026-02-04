@@ -46,7 +46,7 @@ export default function Privacy() {
       />
 
       <section className="bg-white py-16">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mx-auto max-w-4xl">
             <p className="mb-8 text-sm text-gray-500">Last Updated: February 1, 2026</p>
 

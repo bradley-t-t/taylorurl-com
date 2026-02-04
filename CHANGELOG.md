@@ -2,6 +2,22 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [2.5] - 2026-02-04
+
+- Removed the Contact page and its associated route from the application, simplifying the navigation structure.
+- Revamped the Footer component with a new design, featuring a gradient background, a semi-transparent black card with backdrop blur, and updated styling for icons and text with hover effects.
+- Updated the Footer content by removing the Services category from navigation links and simplifying the Company links, while adjusting the layout for better responsiveness.
+- Enhanced the Navigation component with a redesigned mobile menu, including a smooth animation for the menu toggle and improved accessibility with ARIA attributes.
+- Improved the PageHero component by adding new styling for hero sections with better typography and responsive adjustments.
+- Overhauled the Home view with updated content structure, focusing on clearer messaging and refined visual hierarchy for key sections.
+- Redesigned the About view with expanded content, improved layout for readability, and updated imagery for a more engaging presentation.
+- Updated the Work view with a refreshed portfolio display, featuring improved spacing and hover interactions for project cards.
+- Completely redesigned the Pricing view with a modern card-based layout, enhanced comparison tables, and improved call-to-action buttons for better user engagement.
+- Made minor styling updates to the Services view, adjusting spacing and typography for consistency with the overall design refresh.
+- Applied a global design refresh in index.css, introducing new utility classes, refined animations, and consistent spacing and typography across the application.
+- Adjusted the Clients component layout by updating the container class for better width control with max-w-6xl.
+- Updated Tailwind configuration with new customizations for colors and breakpoints to support the design overhaul.
+
 ## [2.4] - 2026-02-04
 
 - Updated the About page to reflect a shift from an individual focus to a business entity, TaylorURL, now described as a web development agency based in Houston specializing in local businesses.

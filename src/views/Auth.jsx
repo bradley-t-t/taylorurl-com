@@ -156,7 +156,7 @@ export default function Auth() {
                 started.
               </p>
               <Link
-                to="/contact"
+                to="/pricing"
                 className="mt-4 inline-block text-sm font-medium text-gray-900 underline hover:no-underline"
               >
                 Contact Us
@@ -229,7 +229,7 @@ export default function Auth() {
                 This portal is for existing TaylorURL clients only. If you&apos;re interested in our
                 services, please{' '}
                 <Link
-                  to="/contact"
+                  to="/pricing"
                   className="font-medium text-gray-900 underline hover:no-underline"
                 >
                   get in touch

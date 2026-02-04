@@ -1,7 +1,19 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '1.5rem',
+      screens: {
+        '2xl': '1152px',
+      },
+    },
     extend: {
+      colors: {
+        lime: {
+          accent: '#38ff6d',
+        },
+      },
       fontFamily: {
         sans: ['Inconsolata', 'Courier New', 'monospace'],
         display: ['Inconsolata', 'Courier New', 'monospace'],

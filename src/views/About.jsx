@@ -1,137 +1,247 @@
-import { Zap, Users, Code, HandshakeIcon, Target, Clock } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Users, ArrowRight, Layers, Shield, Rocket } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import PageHero from '@components/PageHero'
 
 export default function About() {
-  const capabilities = [
-    'Custom Website Development',
-    'Web Application Development',
-    'E-Commerce Solutions',
-    'Performance Optimization',
-    'Ongoing Maintenance & Support',
-    'Mobile-Responsive Design',
+  const stats = [
+    { value: '100+', label: 'Projects Delivered' },
+    { value: '3+', label: 'Years Experience' },
+    { value: '100mi', label: 'Service Radius' },
+    { value: '24/7', label: 'Support Available' },
   ]
 
-  const values = [
+  const approach = [
     {
-      icon: Zap,
-      title: 'Performance First',
+      step: '01',
+      title: 'Discovery',
       description:
-        'Every millisecond matters. We optimize for speed without sacrificing functionality.',
+        'We learn about your business, goals, and target audience to create a strategy that works.',
     },
     {
-      icon: Target,
-      title: 'Results Driven',
+      step: '02',
+      title: 'Design',
       description:
-        'We build websites that convert visitors into customers and drive real business growth.',
+        'Custom designs crafted to reflect your brand and convert visitors into customers.',
     },
     {
-      icon: Code,
-      title: 'Quality Code',
+      step: '03',
+      title: 'Develop',
       description:
-        'Clean, maintainable code built with modern technologies that scale with your business.',
+        'We build your site with modern technologies, optimized for speed and performance.',
     },
     {
-      icon: HandshakeIcon,
-      title: 'Partnership Approach',
-      description: "We're not just developers—we're partners invested in your success.",
+      step: '04',
+      title: 'Deploy & Support',
+      description:
+        'Launch your site and provide ongoing maintenance to keep everything running smoothly.',
+    },
+  ]
+
+  const differentiators = [
+    {
+      icon: Rocket,
+      title: 'Fast Turnaround',
+      description: 'Most projects completed within 2-4 weeks, not months.',
+    },
+    {
+      icon: Shield,
+      title: 'No Hidden Fees',
+      description: 'Clear, upfront quotes with no surprise charges.',
+    },
+    {
+      icon: Layers,
+      title: 'Modern Stack',
+      description: 'Built with technologies that scale as your business grows.',
     },
     {
       icon: Users,
-      title: 'Client Focused',
-      description:
-        'Your business goals drive every decision we make throughout the development process.',
-    },
-    {
-      icon: Clock,
-      title: 'Reliable Support',
-      description: 'Ongoing maintenance and support to keep your website running smoothly.',
+      title: 'Direct Communication',
+      description: 'Work directly with the developer, no middlemen.',
     },
   ]
 
   return (
     <div>
       <PageHero
-        title="About Us"
-        description="A web development agency helping local businesses establish their online presence."
+        title="About TaylorURL"
+        description="A web development agency helping Houston-area businesses establish a powerful online presence."
       />
 
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-16 space-y-6 text-lg leading-relaxed text-gray-700">
-              <p>
-                <strong className="font-semibold text-gray-900">TaylorURL</strong> is a web
-                development agency based in the Houston area, specializing in building professional
-                websites for local businesses.
-              </p>
-              <p>
-                Founded by <strong className="font-semibold text-gray-900">Trenton Taylor</strong>,
-                we understand that most local businesses need a professional online presence but
-                don't have the budget for enterprise solutions. That's why we offer straightforward
-                pricing and reliable service.
-              </p>
-              <p>
-                We believe every business deserves a fast, mobile-friendly website that helps them
-                reach more customers. Our approach is simple: build quality websites at affordable
-                prices with ongoing support you can count on.
-              </p>
-            </div>
-
-            <div className="mb-16">
-              <h2 className="mb-6 text-2xl font-bold text-gray-900">
-                <span className="logo-wave-dark">What We Do</span>
-              </h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {capabilities.map(capability => (
-                  <div
-                    key={capability}
-                    className="flex items-center rounded-lg border border-gray-200 px-4 py-3"
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid items-center gap-16 lg:grid-cols-2">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="mb-6 text-4xl font-bold text-gray-900">
+                  Building Websites That <span className="logo-wave-dark">Drive Results</span>
+                </h2>
+                <div className="space-y-5 text-lg text-gray-600">
+                  <p>
+                    TaylorURL is a web development agency based in Houston, Texas, founded by
+                    Trenton Taylor with a simple mission: help local businesses succeed online
+                    without breaking the bank.
+                  </p>
+                  <p>
+                    We specialize in creating fast, modern, and mobile-friendly websites that not
+                    only look great but actually convert visitors into customers. Every project is
+                    built with care, using the same technologies trusted by enterprise companies.
+                  </p>
+                  <p>
+                    Unlike large agencies with complex processes and high overhead, we keep things
+                    simple. You work directly with the developer, get a clear upfront quote, and
+                    receive ongoing support that ensures your website continues to perform.
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="grid grid-cols-2 gap-6"
+              >
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center"
                   >
-                    <span className="text-gray-900">{capability}</span>
-                  </div>
+                    <div className="mb-2 text-3xl font-bold text-gray-900">{stat.value}</div>
+                    <div className="text-sm text-gray-500">{stat.label}</div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="mb-6 text-2xl font-bold text-gray-900">
-                <span className="logo-wave-dark">Our Values</span>
-              </h2>
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {values.map(value => {
-                  const Icon = value.icon
-                  return (
-                    <div key={value.title}>
-                      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100">
-                        <Icon className="h-5 w-5 text-gray-900" strokeWidth={1.5} />
-                      </div>
-                      <h3 className="mb-2 text-lg font-semibold text-gray-900">{value.title}</h3>
-                      <p className="text-gray-600">{value.description}</p>
-                    </div>
-                  )
-                })}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-gray-50 py-16">
-        <div className="container mx-auto px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              Let's <span className="logo-wave-dark">Work Together</span>
-            </h2>
-            <p className="mb-6 text-gray-600">
-              Ready to get your business online? Let's talk about how we can help.
-            </p>
-            <a
-              href="mailto:trenton@taylorurl.com"
-              className="inline-block rounded-lg bg-gray-900 px-6 py-3 font-medium text-white hover:bg-gray-800"
+      <section className="border-y border-gray-200 bg-gray-50 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 text-center"
             >
-              Get in Touch
-            </a>
+              <h2 className="mb-4 text-3xl font-bold text-gray-900">
+                Why Choose <span className="logo-wave-dark">TaylorURL</span>
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-gray-600">
+                We do things differently than traditional agencies.
+              </p>
+            </motion.div>
+
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {differentiators.map((item, i) => {
+                const Icon = item.icon
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:border-[#38ff6d]/30 hover:shadow-lg"
+                  >
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100">
+                      <Icon className="h-6 w-6 text-gray-900" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mb-2 text-lg font-semibold text-gray-900">{item.title}</h3>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </motion.div>
+                )
+              })}
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 text-center"
+            >
+              <h2 className="mb-4 text-3xl font-bold text-gray-900">
+                Our <span className="logo-wave-dark">Process</span>
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-gray-600">
+                A straightforward approach to getting your business online.
+              </p>
+            </motion.div>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {approach.map((item, i) => (
+                <motion.div
+                  key={item.step}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="relative"
+                >
+                  <div className="mb-4 text-5xl font-bold text-gray-100">{item.step}</div>
+                  <h3 className="mb-2 text-xl font-semibold text-gray-900">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                  {i < approach.length - 1 && (
+                    <div className="absolute right-0 top-8 hidden text-gray-300 lg:block">
+                      <ArrowRight className="h-6 w-6" />
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-gray-200 bg-gray-900 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <h2 className="mb-4 text-3xl font-bold text-white">
+              Ready to Get <span className="logo-wave">Started</span>?
+            </h2>
+            <p className="mb-8 text-lg text-gray-400">
+              Let's discuss your project and see how we can help your business grow online.
+            </p>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                to="/pricing"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#38ff6d] px-8 py-4 font-semibold text-black transition-all hover:bg-[#2de85e]"
+              >
+                Get a Quote
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link
+                to="/work"
+                className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-8 py-4 font-semibold text-white transition-all hover:border-gray-500 hover:bg-gray-800"
+              >
+                View Our Work
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

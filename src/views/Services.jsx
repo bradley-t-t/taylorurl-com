@@ -60,37 +60,37 @@ export default function Services() {
     <div>
       <PageHero
         title="Services"
-        description="Comprehensive web development services with transparent, straightforward pricing."
+        description="Comprehensive web development services tailored to your business needs."
       />
 
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-6">
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-5xl">
-            <div className="grid gap-12 md:grid-cols-2">
+            <div className="grid gap-8 md:grid-cols-2">
               {services.map((service, i) => {
                 const Icon = service.icon
                 return (
                   <motion.div
                     key={service.title}
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="group border-b border-gray-100 pb-12 last:border-0"
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.15 }}
+                    whileHover={{ y: -5 }}
+                    className="group rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-[#38ff6d]/30 hover:shadow-xl hover:shadow-[#38ff6d]/5"
                   >
-                    <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 transition-all duration-300 group-hover:scale-110 group-hover:bg-gray-900">
+                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gray-100 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#38ff6d]/10">
                       <Icon
-                        className="h-5 w-5 text-gray-900 transition-colors group-hover:text-white"
+                        className="h-6 w-6 text-gray-900 transition-colors group-hover:text-[#38ff6d]"
                         strokeWidth={1.5}
                       />
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold text-gray-900">{service.title}</h3>
-                    <p className="mb-4 text-gray-600">{service.description}</p>
-                    <ul className="space-y-2">
+                    <h3 className="mb-3 text-xl font-semibold text-gray-900">{service.title}</h3>
+                    <p className="mb-5 text-gray-600">{service.description}</p>
+                    <ul className="space-y-3">
                       {service.features.map(feature => (
-                        <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={feature} className="flex items-start gap-3 text-sm text-gray-600">
                           <Check
-                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400"
+                            className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#38ff6d]"
                             strokeWidth={2}
                           />
                           {feature}
@@ -106,7 +106,7 @@ export default function Services() {
       </section>
 
       <section className="border-t border-gray-200 bg-gray-50 py-16">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,24 +115,24 @@ export default function Services() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              Simple, <span className="logo-wave-dark">Transparent Pricing</span>
+              Ready to <span className="logo-wave-dark">Get Started</span>?
             </h2>
             <p className="mb-6 text-gray-600">
-              One upfront fee starting at $500 + $49.99/month for ongoing support and maintenance.
+              Let's discuss your project and create a custom solution for your business.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/pricing"
-                className="group inline-flex items-center gap-2 rounded-lg bg-gray-900 px-6 py-3 font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800"
+                className="group inline-flex items-center gap-2 rounded-lg bg-[#38ff6d] px-6 py-3 font-medium text-black transition-all duration-300 hover:scale-105 hover:bg-[#2de85e]"
               >
-                View Pricing
+                Get a Quote
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                to="/contact"
+                to="/work"
                 className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 font-medium text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-gray-100"
               >
-                Contact Me
+                View My Work
               </Link>
             </div>
           </motion.div>

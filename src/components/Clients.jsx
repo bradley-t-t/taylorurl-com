@@ -23,7 +23,7 @@ function Clients() {
 
   return (
     <section className="bg-gray-50 py-20" id="clients">
-      <div className="container mx-auto px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900">Who I've Worked With</h2>
         </div>

@@ -17,7 +17,7 @@ export default function Terms() {
     },
     {
       title: '4. Payment Terms',
-      content: `Our standard pricing includes a recurring monthly fee of $49.99 plus any applicable additional charges (external libraries, token usage, advertising costs, etc.) and a one-time up-front fee starting from $500 depending on project scope. Payment terms will be specified in individual project agreements. Late payments may incur additional fees.`,
+      content: `Pricing includes a one-time project fee and a recurring monthly maintenance fee. Additional charges may apply for external services such as API integrations, token usage, or advertising costs. Specific pricing will be outlined in individual project agreements. Late payments may incur additional fees.`,
     },
     {
       title: '5. Intellectual Property',
@@ -62,7 +62,7 @@ export default function Terms() {
       />
 
       <section className="bg-white py-16">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mx-auto max-w-4xl">
             <p className="mb-8 text-sm text-gray-500">Effective Date: February 1, 2026</p>
 

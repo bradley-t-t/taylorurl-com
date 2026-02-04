@@ -6,7 +6,6 @@ import Home from '@views/Home'
 import About from '@views/About'
 import Services from '@views/Services'
 import Work from '@views/Work'
-import Contact from '@views/Contact'
 import Pricing from '@views/Pricing'
 import Privacy from '@views/Privacy'
 import Terms from '@views/Terms'
@@ -25,7 +24,6 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="work" element={<Work />} />
             <Route path="pricing" element={<Pricing />} />
-            <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />
             <Route path="license" element={<License />} />

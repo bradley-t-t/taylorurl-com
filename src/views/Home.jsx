@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import {
   ArrowRight,
   Zap,
@@ -12,7 +12,6 @@ import {
   Shield,
   MessageSquare,
   Check,
-  MapPin,
   Phone,
 } from 'lucide-react'
 import {
@@ -25,9 +24,6 @@ import {
   ResponsiveContainer,
   LineChart,
   Line,
-  PieChart,
-  Pie,
-  Cell,
 } from 'recharts'
 import { MapContainer, TileLayer, Circle, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
@@ -54,19 +50,34 @@ export default function Home() {
   }
 
   return (
-    <div className="pt-20">
-      <section className="relative flex min-h-screen items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white" />
+    <div className="pt-20 md:pt-24">
+      <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-[90vh]">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50" />
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `
+              linear-gradient(90deg, #000 1px, transparent 1px),
+              linear-gradient(#000 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px',
+          }}
+        />
+        <div className="absolute right-0 top-1/4 -mr-40 h-[500px] w-[500px] rounded-full bg-[#38ff6d]/10 blur-[100px]" />
+        <div className="absolute bottom-0 left-0 -mb-40 -ml-40 h-[400px] w-[400px] rounded-full bg-gray-200/50 blur-[80px]" />
 
-        <div className="container relative z-10 mx-auto px-6">
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
           <div className="max-w-4xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-2 text-sm text-gray-600 shadow-sm backdrop-blur-sm"
             >
-              <MapPin className="h-4 w-4" />
+              <span className="flex h-2 w-2">
+                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-[#38ff6d] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#38ff6d]" />
+              </span>
               Serving local businesses in the Houston area
             </motion.div>
 
@@ -74,7 +85,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8 text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl"
+              className="mb-8 text-4xl font-bold leading-[1.1] tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Your Business Deserves
               <br />
@@ -98,17 +109,17 @@ export default function Home() {
               className="flex flex-col gap-4 sm:flex-row sm:flex-wrap"
             >
               <Link
-                to="/contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800 sm:px-8 sm:py-4 sm:text-lg"
+                to="/pricing"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#38ff6d] px-6 py-4 text-base font-semibold text-black shadow-lg shadow-[#38ff6d]/25 transition-all duration-300 hover:scale-105 hover:bg-[#2de85e] hover:shadow-xl hover:shadow-[#38ff6d]/30 sm:px-8 sm:text-lg"
               >
                 Get Your Free Quote
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                to="/pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-gray-900 px-6 py-3 text-base font-medium text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-gray-100 sm:px-8 sm:py-4 sm:text-lg"
+                to="/work"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-gray-900 px-6 py-4 text-base font-semibold text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-gray-900 hover:text-white sm:px-8 sm:text-lg"
               >
-                See Pricing
+                View Our Work
               </Link>
             </motion.div>
 
@@ -119,15 +130,15 @@ export default function Home() {
               className="mt-12 flex flex-wrap items-center gap-4 text-sm text-gray-500 sm:gap-8"
             >
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-gray-700" />
+                <Check className="h-5 w-5 text-[#38ff6d]" />
                 No contracts
               </div>
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-gray-700" />
+                <Check className="h-5 w-5 text-[#38ff6d]" />
                 Cancel anytime
               </div>
               <div className="flex items-center gap-2">
-                <Check className="h-5 w-5 text-gray-700" />
+                <Check className="h-5 w-5 text-[#38ff6d]" />
                 Free consultation
               </div>
             </motion.div>
@@ -136,7 +147,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-gray-200 bg-gray-50 py-20">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
@@ -212,7 +223,7 @@ export default function Home() {
       </section>
 
       <section className="relative border-t border-gray-200 bg-white py-24">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <div className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-500">
@@ -277,8 +288,13 @@ export default function Home() {
       </section>
 
       <section className="border-t border-gray-200 bg-white py-24">
-        <div className="container mx-auto px-6">
-          <div className="mb-16 text-center">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               Why Local Businesses <span className="logo-wave-dark">Need a Website</span>
             </h2>
@@ -286,9 +302,9 @@ export default function Home() {
               A professional website is no longer optional. It's how customers find you, trust you,
               and choose you over the competition.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: 'Get Found on Google',
@@ -325,13 +341,18 @@ export default function Home() {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="rounded-xl border border-gray-200 bg-white p-8"
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -5 }}
+                  className="group rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-[#38ff6d]/30 hover:shadow-xl hover:shadow-[#38ff6d]/5"
                 >
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
-                    <Icon className="h-6 w-6 text-gray-900" strokeWidth={1.5} />
+                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gray-100 transition-all duration-300 group-hover:bg-[#38ff6d]/10">
+                    <Icon
+                      className="h-6 w-6 text-gray-900 transition-colors group-hover:text-[#38ff6d]"
+                      strokeWidth={1.5}
+                    />
                   </div>
                   <h3 className="mb-3 text-xl font-semibold text-gray-900">{item.title}</h3>
                   <p className="leading-relaxed text-gray-600">{item.desc}</p>
@@ -343,7 +364,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-gray-200 bg-gray-50 py-24">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <div className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-900">
@@ -442,7 +463,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-gray-200 bg-white py-24">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="order-2 rounded-xl border border-gray-200 bg-white p-6 lg:order-1">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500">
@@ -540,77 +561,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-gray-50 py-24">
-        <div className="container mx-auto px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Simple, <span className="logo-wave-dark">Transparent Pricing</span>
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              No hidden fees. No long-term contracts. Just a professional website for your business
-              at a price you can afford.
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:gap-8">
-            <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
-              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-500">
-                One-Time
-              </div>
-              <div className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">$500+</div>
-              <p className="mb-6 text-gray-600">Setup fee based on your needs</p>
-              <ul className="space-y-3">
-                {[
-                  'Custom design',
-                  'Mobile responsive',
-                  'SEO optimized',
-                  'Contact forms',
-                  'Fast hosting',
-                ].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
-                    <Check className="h-5 w-5 text-gray-500" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-xl border-2 border-gray-900 bg-white p-6 sm:p-8">
-              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-500">
-                Monthly
-              </div>
-              <div className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">$49.99</div>
-              <p className="mb-6 text-gray-600">Everything to keep your site running</p>
-              <ul className="space-y-3">
-                {[
-                  'Hosting included',
-                  'Security updates',
-                  'Content changes',
-                  'Technical support',
-                  'Monthly backups',
-                ].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
-                    <Check className="h-5 w-5 text-gray-500" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              to="/pricing"
-              className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800"
-            >
-              View Full Pricing Details
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="border-t border-gray-200 bg-white py-24">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
               <span className="logo-wave-dark">How It Works</span>
@@ -658,61 +610,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-white py-24">
-        <div className="container mx-auto px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              <span className="logo-wave-dark">Frequently Asked Questions</span>
-            </h2>
-          </div>
-
-          <div className="mx-auto max-w-3xl space-y-6">
-            {[
-              {
-                q: 'How long does it take to build my website?',
-                a: "Most websites are completed within 1-2 weeks. Complex projects may take 3-4 weeks. I'll give you a timeline during our consultation.",
-              },
-              {
-                q: 'Do I need to provide content and images?',
-                a: "It helps if you have photos of your work, but I can guide you on what's needed. I'll write the content based on information you provide about your business.",
-              },
-              {
-                q: 'What if I need changes after the site is live?',
-                a: "Content updates are included in your monthly fee. Need to add a new service or change your hours? Just let me know and I'll update it.",
-              },
-              {
-                q: 'Can I cancel anytime?',
-                a: 'Yes. There are no long-term contracts. If you decide to cancel, just give 30 days notice. Your site files are always yours.',
-              },
-              {
-                q: 'Will my site work on phones?',
-                a: 'Absolutely. Every site I build is mobile-responsive, meaning it looks great and works perfectly on phones, tablets, and computers.',
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                className="rounded-xl border border-gray-200 bg-white p-6"
-              >
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">{item.q}</h3>
-                <p className="text-gray-600">{item.a}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-gray-600">Have more questions?</p>
-            <Link to="/contact" className="font-medium text-gray-900 hover:underline">
-              Get in touch
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="border-t border-gray-200 bg-gray-50 py-24">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl rounded-2xl border border-gray-200 bg-white p-8 text-center md:p-12">
             <MessageSquare className="mx-auto mb-6 h-12 w-12 text-gray-400" />
             <h2 className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
@@ -729,11 +628,11 @@ export default function Home() {
                 onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-3 focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                className="flex-1 rounded-lg border border-gray-300 px-4 py-3 focus:border-[#38ff6d] focus:outline-none focus:ring-1 focus:ring-[#38ff6d]"
               />
               <button
                 type="submit"
-                className="rounded-lg bg-gray-900 px-6 py-3 font-medium text-white transition-colors hover:bg-gray-800"
+                className="rounded-lg bg-[#38ff6d] px-6 py-3 font-medium text-black transition-colors hover:bg-[#2de85e]"
               >
                 Subscribe
               </button>
@@ -744,7 +643,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-gray-200 bg-gray-100 py-24">
-        <div className="container mx-auto px-6 text-center">
+        <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
             Ready to Get <span className="logo-wave-dark">More Customers?</span>
           </h2>
@@ -754,8 +653,8 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800"
+              to="/pricing"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#38ff6d] px-8 py-4 text-lg font-medium text-black transition-all duration-300 hover:scale-105 hover:bg-[#2de85e]"
             >
               Get Your Free Quote
               <ArrowRight className="h-5 w-5" />
