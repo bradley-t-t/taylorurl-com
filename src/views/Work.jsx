@@ -5,47 +5,44 @@ import PageHero from '@components/PageHero'
 export default function Work() {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      category: 'Full Stack Development',
+      title: 'Company Management Platform',
+      category: 'Enterprise Software',
       description:
-        'Modern online store with real-time inventory management and seamless checkout experience.',
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      results: ['40% increase in conversions', '99.9% uptime', 'Sub-2s page loads'],
+        'Logistical asset tracker and regional management software supporting multiple regions with comprehensive fleet operations capabilities.',
+      tech: ['Modern Web Stack', 'Real-time Database', 'AI Integration'],
+      results: [
+        'Manages mixers, tractors, trailers, heavy equipment',
+        'AI-validated data entry and summaries',
+        'Weekly verification systems for asset accuracy',
+        'Role-based access across regions and plants',
+        'Real-time leaderboards, reports, and notifications',
+      ],
     },
     {
-      title: 'SaaS Dashboard',
-      category: 'React Application',
-      description: 'Complex data visualization dashboard for B2B analytics platform.',
-      tech: ['React', 'TypeScript', 'D3.js', 'Tailwind'],
-      results: ['Used by 10K+ users', 'Highly rated UX', 'Real-time updates'],
+      title: 'Racetrack Management System',
+      category: 'Local Business Software',
+      description:
+        'Complete business management solution for a local racetrack with integrated invoicing and payment processing.',
+      tech: ['Modern Web Stack', 'Payment Processing', 'Analytics'],
+      results: [
+        'Secure payment integration',
+        'Comprehensive invoicing system',
+        'Analytics dashboard for business insights',
+        'Staff management portal',
+      ],
     },
     {
-      title: 'Healthcare Portal',
-      category: 'Accessible Web App',
-      description: 'HIPAA-compliant patient portal with accessibility features.',
-      tech: ['React', 'ARIA', 'WCAG 2.1', 'Firebase'],
-      results: ['WCAG AA compliant', 'HIPAA certified', '95% user satisfaction'],
-    },
-    {
-      title: 'Marketing Website',
-      category: 'Website Design & Dev',
-      description: 'High-converting marketing site with custom animations and CMS integration.',
-      tech: ['React', 'Framer Motion', 'Contentful', 'Vercel'],
-      results: ['50% faster than previous', 'SEO score: 100', '2x lead generation'],
-    },
-    {
-      title: 'Mobile-First App',
-      category: 'Progressive Web App',
-      description: 'PWA with offline functionality and push notifications.',
-      tech: ['React', 'Service Workers', 'IndexedDB', 'PWA'],
-      results: ['Works offline', 'App-like experience', '90+ Lighthouse score'],
-    },
-    {
-      title: 'Performance Overhaul',
-      category: 'Optimization Project',
-      description: 'Complete performance optimization for high-traffic e-commerce site.',
-      tech: ['Optimization', 'CDN', 'Caching', 'Code Splitting'],
-      results: ['3s to 0.8s load time', '60% bandwidth reduction', '25% more sales'],
+      title: 'Maritime Industry Website',
+      category: 'Corporate Website',
+      description:
+        'Corporate website for one of the largest barge fleeting companies in the USA, supplier to the largest concrete producer in America.',
+      tech: ['Modern Web Stack', 'Animations', 'Cloud Hosting'],
+      results: [
+        'Professional corporate presence',
+        'Mobile-responsive design',
+        'Fast page load times',
+        'SEO optimized',
+      ],
     },
   ]
 

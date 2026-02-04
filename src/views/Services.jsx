@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Palette, Code2, Zap, Eye, Wrench, Lightbulb, ArrowRight, Check } from 'lucide-react'
+import { Palette, Code2, Zap, Wrench, ArrowRight, Check } from 'lucide-react'
 import PageHero from '@components/PageHero'
 
 export default function Services() {
@@ -43,18 +43,6 @@ export default function Services() {
       ],
     },
     {
-      icon: Eye,
-      title: 'Accessibility Implementation',
-      description: 'Ensure your website is usable by everyone, including people with disabilities.',
-      features: [
-        'WCAG 2.1 compliance',
-        'Keyboard navigation',
-        'Screen reader optimization',
-        'Color contrast improvements',
-        'Accessibility documentation',
-      ],
-    },
-    {
       icon: Wrench,
       title: 'Ongoing Maintenance & Support',
       description: 'Keep your website running smoothly with continuous support.',
@@ -64,18 +52,6 @@ export default function Services() {
         'Content updates',
         'Performance monitoring',
         'Security updates',
-      ],
-    },
-    {
-      icon: Lightbulb,
-      title: 'Technical Consulting',
-      description: 'Expert guidance on technology choices and project planning.',
-      features: [
-        'Technology stack recommendations',
-        'Architecture planning',
-        'Code reviews',
-        'Team training',
-        'Best practices implementation',
       ],
     },
   ]

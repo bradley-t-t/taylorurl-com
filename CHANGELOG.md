@@ -2,6 +2,19 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [2.4] - 2026-02-04
+
+- Updated the About page to reflect a shift from an individual focus to a business entity, TaylorURL, now described as a web development agency based in Houston specializing in local businesses.
+- Revised the About page content to emphasize affordable pricing and reliable service for local businesses needing an online presence.
+- Replaced the "Core Skills" section with "What We Do" on the About page, listing specific services like Custom Website Development, E-Commerce Solutions, and Mobile-Responsive Design.
+- Expanded the values section on the About page, adding new values such as "Results Driven," "Client Focused," and "Reliable Support," with updated descriptions to align with a business-oriented approach.
+- Changed pronouns and messaging throughout the About page from "I" to "We" to represent a team perspective.
+- Updated icons on the About page, adding Target and Clock icons while maintaining existing ones like Zap and Users for visual representation of values.
+- Adjusted the layout of the values grid on the About page to support a responsive design with up to three columns on larger screens.
+- Removed the testimonials section from the Home page, eliminating customer quotes and related content to streamline the page.
+- Removed unused icon imports from the Home page, such as Code, TrendingUp, Star, and Mail, to clean up the codebase.
+- Simplified content in the Services and Work pages by removing or adjusting minor elements, though specific details are less extensive compared to About page updates.
+
 ## [2.3] - 2026-02-02
 
 - Updated package.json to replace custom release and cleanup scripts with "turl-release" command

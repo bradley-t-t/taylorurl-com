@@ -1,14 +1,14 @@
-import { Zap, Users, Code, HandshakeIcon } from 'lucide-react'
+import { Zap, Users, Code, HandshakeIcon, Target, Clock } from 'lucide-react'
 import PageHero from '@components/PageHero'
 
 export default function About() {
-  const skills = [
-    { name: 'React & Modern JavaScript', level: 'Expert' },
-    { name: 'Tailwind CSS & Design Systems', level: 'Expert' },
-    { name: 'Performance Optimization', level: 'Advanced' },
-    { name: 'Web Accessibility (WCAG)', level: 'Advanced' },
-    { name: 'Node.js & Backend APIs', level: 'Proficient' },
-    { name: 'Database Design', level: 'Proficient' },
+  const capabilities = [
+    'Custom Website Development',
+    'Web Application Development',
+    'E-Commerce Solutions',
+    'Performance Optimization',
+    'Ongoing Maintenance & Support',
+    'Mobile-Responsive Design',
   ]
 
   const values = [
@@ -16,31 +16,43 @@ export default function About() {
       icon: Zap,
       title: 'Performance First',
       description:
-        'Every millisecond matters. I optimize for speed without sacrificing functionality.',
+        'Every millisecond matters. We optimize for speed without sacrificing functionality.',
     },
     {
-      icon: Users,
-      title: 'Accessibility Always',
+      icon: Target,
+      title: 'Results Driven',
       description:
-        'Building for everyone means ensuring your site works for all users, regardless of ability.',
+        'We build websites that convert visitors into customers and drive real business growth.',
     },
     {
       icon: Code,
-      title: 'Maintainable Code',
-      description: 'Clean, well-documented code that your team can understand and extend.',
+      title: 'Quality Code',
+      description:
+        'Clean, maintainable code built with modern technologies that scale with your business.',
     },
     {
       icon: HandshakeIcon,
       title: 'Partnership Approach',
-      description: "I'm not just a developer—I'm a partner invested in your success.",
+      description: "We're not just developers—we're partners invested in your success.",
+    },
+    {
+      icon: Users,
+      title: 'Client Focused',
+      description:
+        'Your business goals drive every decision we make throughout the development process.',
+    },
+    {
+      icon: Clock,
+      title: 'Reliable Support',
+      description: 'Ongoing maintenance and support to keep your website running smoothly.',
     },
   ]
 
   return (
     <div>
       <PageHero
-        title="About Me"
-        description="Web developer specializing in building fast, accessible, and maintainable web applications."
+        title="About Us"
+        description="A web development agency helping local businesses establish their online presence."
       />
 
       <section className="bg-white py-16">
@@ -48,29 +60,34 @@ export default function About() {
           <div className="mx-auto max-w-4xl">
             <div className="mb-16 space-y-6 text-lg leading-relaxed text-gray-700">
               <p>
-                Hi, I'm <strong className="font-semibold text-gray-900">Trenton Taylor</strong>.
-                With years of experience in modern web technologies, I help businesses and startups
-                transform their ideas into beautiful, functional digital experiences.
+                <strong className="font-semibold text-gray-900">TaylorURL</strong> is a web
+                development agency based in the Houston area, specializing in building professional
+                websites for local businesses.
               </p>
               <p>
-                I believe that great websites should be fast, accessible to everyone, and built with
-                clean code that stands the test of time. Every project I work on reflects these
-                values.
+                Founded by <strong className="font-semibold text-gray-900">Trenton Taylor</strong>,
+                we understand that most local businesses need a professional online presence but
+                don't have the budget for enterprise solutions. That's why we offer straightforward
+                pricing and reliable service.
+              </p>
+              <p>
+                We believe every business deserves a fast, mobile-friendly website that helps them
+                reach more customers. Our approach is simple: build quality websites at affordable
+                prices with ongoing support you can count on.
               </p>
             </div>
 
             <div className="mb-16">
               <h2 className="mb-6 text-2xl font-bold text-gray-900">
-                <span className="logo-wave-dark">Core Skills</span>
+                <span className="logo-wave-dark">What We Do</span>
               </h2>
               <div className="grid gap-3 sm:grid-cols-2">
-                {skills.map(skill => (
+                {capabilities.map(capability => (
                   <div
-                    key={skill.name}
-                    className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3"
+                    key={capability}
+                    className="flex items-center rounded-lg border border-gray-200 px-4 py-3"
                   >
-                    <span className="text-gray-900">{skill.name}</span>
-                    <span className="text-sm text-gray-500">{skill.level}</span>
+                    <span className="text-gray-900">{capability}</span>
                   </div>
                 ))}
               </div>
@@ -78,9 +95,9 @@ export default function About() {
 
             <div>
               <h2 className="mb-6 text-2xl font-bold text-gray-900">
-                <span className="logo-wave-dark">What I Value</span>
+                <span className="logo-wave-dark">Our Values</span>
               </h2>
-              <div className="grid gap-8 sm:grid-cols-2">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {values.map(value => {
                   const Icon = value.icon
                   return (
@@ -106,7 +123,7 @@ export default function About() {
               Let's <span className="logo-wave-dark">Work Together</span>
             </h2>
             <p className="mb-6 text-gray-600">
-              Ready to bring your project to life? Let's talk about how I can help.
+              Ready to get your business online? Let's talk about how we can help.
             </p>
             <a
               href="mailto:trenton@taylorurl.com"

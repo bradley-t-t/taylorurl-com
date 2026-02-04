@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react'
 import {
   ArrowRight,
   Zap,
-  Code,
-  TrendingUp,
   Search,
   Clock,
   DollarSign,
@@ -14,10 +12,8 @@ import {
   Shield,
   MessageSquare,
   Check,
-  Star,
   MapPin,
   Phone,
-  Mail,
 } from 'lucide-react'
 import {
   BarChart,
@@ -658,61 +654,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-gray-200 bg-gray-50 py-24">
-        <div className="container mx-auto px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              What Business Owners <span className="logo-wave-dark">Say</span>
-            </h2>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              {
-                quote:
-                  'Our new website has brought in more customers in 3 months than we got all last year from our old one.',
-                name: 'Mike R.',
-                business: 'Local Plumbing Co.',
-                stars: 5,
-              },
-              {
-                quote:
-                  'I was nervous about the tech stuff, but Trenton made it so easy. Now I actually have customers finding me on Google!',
-                name: 'Sarah T.',
-                business: 'Sweet Treats Bakery',
-                stars: 5,
-              },
-              {
-                quote:
-                  "Best investment I've made for my business. The monthly fee is nothing compared to what I'd pay someone else.",
-                name: 'James K.',
-                business: 'JK Landscaping',
-                stars: 5,
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-xl border border-gray-200 bg-white p-8"
-              >
-                <div className="mb-4 flex gap-1">
-                  {[...Array(item.stars)].map((_, j) => (
-                    <Star key={j} className="h-5 w-5 fill-gray-900 text-gray-900" />
-                  ))}
-                </div>
-                <p className="mb-6 text-gray-700">"{item.quote}"</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{item.name}</div>
-                  <div className="text-sm text-gray-500">{item.business}</div>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
