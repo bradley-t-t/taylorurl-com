@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Check, ArrowRight, ExternalLink } from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 import PageHero from '@components/PageHero'
 
 export default function Work() {

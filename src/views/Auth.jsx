@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Eye, EyeOff, Lock, Mail, AlertCircle } from 'lucide-react'
+import { AlertCircle, Eye, EyeOff, Lock, Mail } from 'lucide-react'
 
 export default function Auth() {
   const [activeTab, setActiveTab] = useState('signin')

@@ -12,7 +12,9 @@
 
 ## Overview
 
-TaylorURL is a professional web development services platform showcasing high-performance, accessible, and maintainable web solutions. Built with modern tools and best practices to deliver exceptional digital experiences for businesses of all sizes.
+TaylorURL is a professional web development services platform showcasing high-performance, accessible, and maintainable
+web solutions. Built with modern tools and best practices to deliver exceptional digital experiences for businesses of
+all sizes.
 
 ---
 

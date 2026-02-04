@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Mail, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Mail, MapPin } from 'lucide-react'
 
 function Footer() {
   const currentYear = new Date().getFullYear()

@@ -6,7 +6,8 @@ All Rights Reserved.
 
 PROPRIETARY SOFTWARE LICENSE
 
-This software and associated documentation files (the "Software") are the exclusive property of TaylorURL. The Software is protected by copyright laws and international treaty provisions.
+This software and associated documentation files (the "Software") are the exclusive property of TaylorURL. The Software
+is protected by copyright laws and international treaty provisions.
 
 RESTRICTIONS:
 
@@ -29,14 +30,20 @@ RESTRICTIONS:
 
 AUTHORIZED USE:
 
-Access to this Software is granted only to authorized individuals who have agreed to be bound by the terms of this license. Unauthorized access, use, or distribution is strictly prohibited and may result in civil and criminal penalties.
+Access to this Software is granted only to authorized individuals who have agreed to be bound by the terms of this
+license. Unauthorized access, use, or distribution is strictly prohibited and may result in civil and criminal
+penalties.
 
 DISCLAIMER:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ENFORCEMENT:
 
-Any violation of this license will result in immediate termination of your right to use the Software and may result in legal action to recover damages and seek injunctive relief.
+Any violation of this license will result in immediate termination of your right to use the Software and may result in
+legal action to recover damages and seek injunctive relief.
 
 For licensing inquiries, contact: trenton@taylorurl.com

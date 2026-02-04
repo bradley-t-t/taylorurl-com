@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { Menu, X, ArrowRight } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { ArrowRight, Menu, X } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function Navigation() {
   const location = useLocation()

@@ -2,34 +2,62 @@
 
 All notable changes to TaylorURL will be documented in this file.
 
+## [2.6] - 2026-02-04
+
+- Updated the Prettier configuration in .prettierrc to format the plugins list as an array with proper indentation for better readability.
+- Adjusted the Tailwind configuration in tailwind.config.js with extensive updates to custom colors, breakpoints, and other styling properties to align with the latest design requirements.
+- Made minor structural updates to various components and views including App.jsx, Footer.jsx, Navigation.jsx, About.jsx, Auth.jsx, Home.jsx, Pricing.jsx, Services.jsx, and Work.jsx to ensure consistency and compatibility with the updated styling.
+- Enhanced the Home view with refined content and layout adjustments for improved user experience and visual flow.
+- Updated the main application entry in main.jsx to include a small but necessary code addition for proper initialization.
+- Revised the PostCSS configuration in postcss.config.js to optimize the build process with updated settings.
+- Improved the index.html file with updated metadata and structural changes for better performance and accessibility.
+
 ## [2.5] - 2026-02-04
 
 - Removed the Contact page and its associated route from the application, simplifying the navigation structure.
-- Revamped the Footer component with a new design, featuring a gradient background, a semi-transparent black card with backdrop blur, and updated styling for icons and text with hover effects.
-- Updated the Footer content by removing the Services category from navigation links and simplifying the Company links, while adjusting the layout for better responsiveness.
-- Enhanced the Navigation component with a redesigned mobile menu, including a smooth animation for the menu toggle and improved accessibility with ARIA attributes.
-- Improved the PageHero component by adding new styling for hero sections with better typography and responsive adjustments.
-- Overhauled the Home view with updated content structure, focusing on clearer messaging and refined visual hierarchy for key sections.
-- Redesigned the About view with expanded content, improved layout for readability, and updated imagery for a more engaging presentation.
-- Updated the Work view with a refreshed portfolio display, featuring improved spacing and hover interactions for project cards.
-- Completely redesigned the Pricing view with a modern card-based layout, enhanced comparison tables, and improved call-to-action buttons for better user engagement.
-- Made minor styling updates to the Services view, adjusting spacing and typography for consistency with the overall design refresh.
-- Applied a global design refresh in index.css, introducing new utility classes, refined animations, and consistent spacing and typography across the application.
+- Revamped the Footer component with a new design, featuring a gradient background, a semi-transparent black card with
+  backdrop blur, and updated styling for icons and text with hover effects.
+- Updated the Footer content by removing the Services category from navigation links and simplifying the Company links,
+  while adjusting the layout for better responsiveness.
+- Enhanced the Navigation component with a redesigned mobile menu, including a smooth animation for the menu toggle and
+  improved accessibility with ARIA attributes.
+- Improved the PageHero component by adding new styling for hero sections with better typography and responsive
+  adjustments.
+- Overhauled the Home view with updated content structure, focusing on clearer messaging and refined visual hierarchy
+  for key sections.
+- Redesigned the About view with expanded content, improved layout for readability, and updated imagery for a more
+  engaging presentation.
+- Updated the Work view with a refreshed portfolio display, featuring improved spacing and hover interactions for
+  project cards.
+- Completely redesigned the Pricing view with a modern card-based layout, enhanced comparison tables, and improved
+  call-to-action buttons for better user engagement.
+- Made minor styling updates to the Services view, adjusting spacing and typography for consistency with the overall
+  design refresh.
+- Applied a global design refresh in index.css, introducing new utility classes, refined animations, and consistent
+  spacing and typography across the application.
 - Adjusted the Clients component layout by updating the container class for better width control with max-w-6xl.
 - Updated Tailwind configuration with new customizations for colors and breakpoints to support the design overhaul.
 
 ## [2.4] - 2026-02-04
 
-- Updated the About page to reflect a shift from an individual focus to a business entity, TaylorURL, now described as a web development agency based in Houston specializing in local businesses.
-- Revised the About page content to emphasize affordable pricing and reliable service for local businesses needing an online presence.
-- Replaced the "Core Skills" section with "What We Do" on the About page, listing specific services like Custom Website Development, E-Commerce Solutions, and Mobile-Responsive Design.
-- Expanded the values section on the About page, adding new values such as "Results Driven," "Client Focused," and "Reliable Support," with updated descriptions to align with a business-oriented approach.
+- Updated the About page to reflect a shift from an individual focus to a business entity, TaylorURL, now described as a
+  web development agency based in Houston specializing in local businesses.
+- Revised the About page content to emphasize affordable pricing and reliable service for local businesses needing an
+  online presence.
+- Replaced the "Core Skills" section with "What We Do" on the About page, listing specific services like Custom Website
+  Development, E-Commerce Solutions, and Mobile-Responsive Design.
+- Expanded the values section on the About page, adding new values such as "Results Driven," "Client Focused," and "
+  Reliable Support," with updated descriptions to align with a business-oriented approach.
 - Changed pronouns and messaging throughout the About page from "I" to "We" to represent a team perspective.
-- Updated icons on the About page, adding Target and Clock icons while maintaining existing ones like Zap and Users for visual representation of values.
-- Adjusted the layout of the values grid on the About page to support a responsive design with up to three columns on larger screens.
-- Removed the testimonials section from the Home page, eliminating customer quotes and related content to streamline the page.
+- Updated icons on the About page, adding Target and Clock icons while maintaining existing ones like Zap and Users for
+  visual representation of values.
+- Adjusted the layout of the values grid on the About page to support a responsive design with up to three columns on
+  larger screens.
+- Removed the testimonials section from the Home page, eliminating customer quotes and related content to streamline the
+  page.
 - Removed unused icon imports from the Home page, such as Code, TrendingUp, Star, and Mail, to clean up the codebase.
-- Simplified content in the Services and Work pages by removing or adjusting minor elements, though specific details are less extensive compared to About page updates.
+- Simplified content in the Services and Work pages by removing or adjusting minor elements, though specific details are
+  less extensive compared to About page updates.
 
 ## [2.3] - 2026-02-02
 
@@ -61,7 +89,8 @@ All notable changes to TaylorURL will be documented in this file.
 - Changed copyright text size in `Footer.jsx` to be responsive with `text-xs sm:text-sm`.
 - Adjusted padding for copyright section in `Footer.jsx` to `pt-6 sm:pt-8`.
 - Updated layout structure in `Footer.jsx` by changing margin-bottom classes to `mb-8 sm:mb-12`.
-- Modified padding and container classes in `PageHero.jsx` to be responsive with `px-4 sm:px-6` and `pb-12 sm:pb-16 sm:pt-24 sm:pt-32`.
+- Modified padding and container classes in `PageHero.jsx` to be responsive with `px-4 sm:px-6` and
+  `pb-12 sm:pb-16 sm:pt-24 sm:pt-32`.
 - Adjusted title text size in `PageHero.jsx` to be responsive with `text-3xl sm:text-4xl md:text-5xl`.
 - Updated description text size in `PageHero.jsx` to be responsive with `text-base sm:text-lg`.
 - Adjusted padding in `Contact.jsx` to be responsive with `py-12 sm:py-16`.

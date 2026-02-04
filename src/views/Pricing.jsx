@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Check, Mail, MapPin, Clock, Send } from 'lucide-react'
+import { Check, Clock, Mail, MapPin, Send } from 'lucide-react'
 import PageHero from '@components/PageHero'
 
 export default function Pricing() {

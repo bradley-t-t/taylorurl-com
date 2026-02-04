@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Palette, Code2, Zap, Wrench, ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, Code2, Palette, Wrench, Zap } from 'lucide-react'
 import PageHero from '@components/PageHero'
 
 export default function Services() {

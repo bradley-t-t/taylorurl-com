@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Users, ArrowRight, Layers, Shield, Rocket } from 'lucide-react'
+import { ArrowRight, Layers, Rocket, Shield, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import PageHero from '@components/PageHero'
 
